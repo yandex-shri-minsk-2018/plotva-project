@@ -7,7 +7,7 @@ import './App.css';
 export class App extends Component {
   render() {
     return (
-      <Layout header={<Header title={'Contacts'} size={'sm'} subtitle={'subtitle'} />} content={
+      <Layout header={<Header title="Contacts" size="sm" subtitle="subtitle" />} content={
         <Contacts contacts = {
           [
             {
