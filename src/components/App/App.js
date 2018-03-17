@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import {Contacts} from '../Contacts/Contacts'
-class App extends Component {
+import React, {Component} from 'react';
+import {Layout} from '../Layout/Layout';
+import {Contacts} from '../Contacts/Contacts';
+import './App.css';
+
+export class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Layout header={'header'} content={
         <Contacts contacts = {
           [
             {
@@ -28,9 +31,8 @@ class App extends Component {
             },
           ]
         }/>
-      </div>
+      }
+      footer={'footer'}/>
     );
   }
 }
-
-export default App;
