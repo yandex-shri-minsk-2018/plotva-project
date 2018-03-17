@@ -2,33 +2,21 @@
     box-sizing: border-box;
 }
 .layout {
-    min-height:100vh;
+    height: 100vh;
     background-color: #fff;
-    color: #333;
-    font-size: 17px;
+    color: #000;
     display: flex;
     flex-direction: column;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 .layout__header, .layout__footer, .layout__content {
     padding: 0 8px;
+    flex: 1 0 auto;
 }
 .layout__content {
-    background-color: #fafafa;
-    flex: 1 0 auto;
-    padding: 45px 8px;
+    overflow-y: scroll;
+    flex: 0 1 100vh;
 }
 .layout__header, .layout__footer {
-    background-color: #fff;
-    height:45px;
     display: flex;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-.layout__footer {
-    top: auto;
-    bottom: 0;
 }
