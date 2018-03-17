@@ -11,7 +11,7 @@ class App extends Component {
               content: 'Some messege',
               contentType: 'messege',
               time: '9:30',
-              size: 'large'
+              size: 'medium'
             },
             {
               userName: 'Aaron A Aaronson',
@@ -24,7 +24,7 @@ class App extends Component {
               userName: 'Aaron A Aaronson',
               content: 'Some messege',
               contentType: 'messege',
-              size: 'small'              
+              size: 'medium'              
             },
           ]
         }/>

@@ -3,9 +3,8 @@ import './Contact.css';
 
 import {Avatar} from '../Avatar/Avatar'
 
-export class Contact extends Component {
-  render() {
-    let { userPic, userName, size = 'large', time, contentType = 'messege', content } = this.props;
+export function Contact(props) {
+    let { userPic, userName, size = 'large', time, contentType = 'messege', content } = props;
     return (
       <div className={`contact contact_${size}`}>
         <Avatar img={userPic} size={size}/>
@@ -30,4 +29,3 @@ export class Contact extends Component {
       </div>
     );
   }
-}
