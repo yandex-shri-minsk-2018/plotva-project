@@ -9,9 +9,9 @@ class Footer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      chatsActive : 1,
-      contactsActive : 0,
-      settingsActive :0  
+      chatsActive: 1,
+      contactsActive: 0,
+      settingsActive: 0  
     }
     this.handleClick = this.handleClick.bind(this);
   }
