@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Layout.css';
 
-class Layout extends Component {
+export class Layout extends Component {
   render() {
     let {header, content, footer} = this.props;
     return (
@@ -28,4 +28,3 @@ class Layout extends Component {
   }
 }
 
-export {Layout};
