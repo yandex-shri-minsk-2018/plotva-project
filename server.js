@@ -4,7 +4,7 @@ const {
     MONGO_USER = '',
     MONGO_PASSWORD = '',
     MONGO_LOCAL = 'false',
-    MONGO_DATABSE = 'yandex-shri',
+    MONGO_DATABASE = 'yandex-shri',
     MONGO_HOST = 'ds215759.mlab.com',
     MONGO_PORT = 15759,
     SERVER_HOST = 'localhost',
@@ -20,7 +20,7 @@ const DATABASE_CONFIG = {
     host: MONGO_HOST,
     port: MONGO_PORT,
     local: MONGO_LOCAL !== 'false',
-    database: MONGO_DATABSE
+    database: MONGO_DATABASE
 };
 
 /**

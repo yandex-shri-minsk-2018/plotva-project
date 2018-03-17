@@ -6,6 +6,7 @@ const cookieParser = require('socket.io-cookie-parser');
 const cookie = require('cookie-parser');
 const uuid = require('uuid/v4');
 const {createReadStream, stat} = require('fs');
+require('dotenv').config();
 
 const {connect} = require('./database');
 const attachController = require('./controller');

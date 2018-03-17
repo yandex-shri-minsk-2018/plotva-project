@@ -7,6 +7,7 @@
     "classnames": "^2.2.5",
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "mongod": "^2.0.0",
