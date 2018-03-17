@@ -1,0 +1,21 @@
+.contact + .contact:before {
+  content: '';
+  background-color:#C9C8CD;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+  width: calc(100% - 60px);
+}
+
+.contact + .contact_large:before {
+  margin-left: 70px;
+}
+
+.contact + .contact_medium:before {
+  margin-left: 70px;
+}
+
+.contact + .contact_small:before {
+  width: calc(100% - 42px);  
+  margin-left: 52px;
+}
