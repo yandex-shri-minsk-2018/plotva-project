@@ -14,7 +14,8 @@ export class App extends Component {
               content: 'Some messege',
               contentType: 'messege',
               time: '9:30',
-              size: 'medium'
+              size: 'medium',
+              icon: 'x'
             },
             {
               userName: 'Aaron A Aaronson',

@@ -14,6 +14,7 @@ export class Contacts extends Component {
               contentType = {contact.contentType}
               time = {contact.time}
               size = {contact.size}
+              icon = {contact.icon}
             />
           )
         }

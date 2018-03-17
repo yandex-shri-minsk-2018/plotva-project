@@ -4,7 +4,7 @@ import './Contact.css';
 import {Avatar} from '../Avatar/Avatar'
 
 export function Contact(props) {
-    let { userPic, userName, size = 'large', time, contentType = 'messege', content } = props;
+    let { userPic, userName, size = 'large', time, contentType = 'messege', content, icon } = props;
     return (
       <div className={`contact contact_${size}`}>
         <Avatar img={userPic} size={size}/>
@@ -15,7 +15,14 @@ export function Contact(props) {
             </div>
             {
               time 
-              ? <div className='content__time'>{time}</div>
+              ? <div className='content__time'>
+                  {
+                    icon
+                    ? <div className='content__icon'>{icon}</div>
+                    : false
+                  }
+                  {time}
+                </div>
               : false
             }
           </div>

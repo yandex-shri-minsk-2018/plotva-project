@@ -50,6 +50,11 @@
   color: #8E8E93;
 }
 
+.content__icon {
+  display: inline-block;  
+  padding: 0 5px;
+}
+
 .content__text_messege {
   max-height: 32px;
 }
