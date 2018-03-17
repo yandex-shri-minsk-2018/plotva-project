@@ -6,7 +6,7 @@ export class HeaderIcon extends Component {
     let {type} = this.props;
 
     return (
-      <a href="#" className={`header-icon header-icon--${type}`}>{type}</a>
+      <button className={`header-icon header-icon_${type}`}>{type}</button>
     );
   }
 }

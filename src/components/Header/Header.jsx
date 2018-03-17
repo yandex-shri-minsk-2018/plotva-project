@@ -6,19 +6,19 @@ export class Header extends Component {
   render() {
     let {title, subtitle, size} = this.props;
     return (
-      <div className={`header-inner header-inner--${size}`}>
-        <div className="header-left">
+      <div className={`header header_${size}`}>
+        <div className="header__left">
 
         </div>
-        <div className="header-center">
-          <div className="header-center__top">{title}</div>
+        <div className="header__center">
+          <div className="header__center-top">{title}</div>
 
           {size === 'lg' &&
-            <div className="header-center__bottom">{subtitle}</div>
+            <div className="header__center-bottom">{subtitle}</div>
           }
 
         </div>
-        <div className="header-right">
+        <div className="header__right">
           <HeaderIcon type={'add'} />
         </div>
       </div>

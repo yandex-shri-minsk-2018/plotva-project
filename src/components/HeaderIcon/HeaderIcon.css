@@ -5,13 +5,13 @@
   text-indent: -9999px;
 }
 
-.header-icon--add {
+.header-icon_add {
   width: 20px;
   height: 20px;
   background-image: url(images/plus.svg);
 }
 
-.header-icon--write {
+.header-icon_write {
   width: 20px;
   height: 20px;
   background-image: url(images/write.svg);
