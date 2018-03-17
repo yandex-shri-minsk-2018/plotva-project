@@ -4,7 +4,7 @@
   height: 1px;
   position: absolute;
   top: 0px;
-  width: calc(100% - 70px);
+  width: calc(100% - 60px);
 }
 
 .contact + .contact_large:before {
@@ -16,6 +16,6 @@
 }
 
 .contact + .contact_small:before {
-  width: calc(100% - 52px);  
+  width: calc(100% - 42px);  
   margin-left: 52px;
 }
