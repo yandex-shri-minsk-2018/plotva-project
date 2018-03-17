@@ -3,20 +3,23 @@
   align-items: center;
   padding-right: 10px;
   position: relative; 
+  padding: 7px 10px 7px 0;
 }
 
 .contact__content {
   display: inline-block;
-  width: 100%;
 }
 
 .contact_large .contact__content {
+  width: calc(100% - 62px);  
   margin-left: 8px;
 }
 .contact_medium .contact__content {
+  width: calc(100% - 60px);  
   margin-left: 10px;
 }
 .contact_small .contact__content {
+  width: calc(100% - 40px);    
   margin-left: 12px;
 }
 
@@ -36,6 +39,10 @@
 
 .content__name {
   font-weight: bold;
+  padding-right: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content__time {
@@ -49,22 +56,6 @@
 
 .content__text_online {
   color: #0981E1;
-}
-
-.contact_large {
-  height: 62px;
-  margin-top: 7px;
-  padding-top: 6px;  
-}
-.contact_medium {
-  height: 60px;
-  margin-top: 6px;
-  padding-top: 5px;
-}
-.contact_small {
-  height: 40px;
-  margin-top: 5px;
-  padding-top: 4px;
 }
 
 .contact_small .content__name {
