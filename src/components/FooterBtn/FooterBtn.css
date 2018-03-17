@@ -1,0 +1,14 @@
+.footer-icon-logo {
+  height: 26px;
+}
+
+.footer-icon-description {
+  color: #007AFF;
+  font-size: 10px;  
+  padding: 0;
+  margin: 0;
+}
+
+.footer-icon--passive{
+  filter: grayscale(100%);
+}
