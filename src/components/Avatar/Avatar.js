@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Avatar.css';
 import defaultImage from './default.png'
 export function Avatar(props) {
