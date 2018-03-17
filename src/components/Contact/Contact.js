@@ -8,8 +8,8 @@ export function Contact(props) {
     return (
       <div className={`contact contact_${size}`}>
         <Avatar img={userPic} size={size}/>
-        <div className="contact__content">
-          <div className="content__header">
+        <div className='contact__content'>
+          <div className='content__header'>
             <div className='content__name'>
               {userName}
             </div>
