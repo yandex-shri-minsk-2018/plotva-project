@@ -69,21 +69,22 @@
 }
 
 .message__status {
-  right: 0;
+  right: 3px;
 
   display: none;
 
-  width: 16px;
+  width: 14px;
 
+  color: #19c700;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: contain;
+  background-size: cover;
 }
 
 .message__status_sent {
-  background-image: url(./images/symbols-telegram-message-status-sent.png);
+  background-image: url(./images/sent.svg);
 }
 
 .message__status_read {
-  background-image: url(./images/symbols-telegram-message-status-read.png);
+  background-image: url(./images/read.svg);
 }
