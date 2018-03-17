@@ -11,6 +11,10 @@
   flex: 1 0 auto;
 }
 
+.layout__header {
+  background-color: #f8f8f8;
+}
+
 .layout__content {
   padding: 0 8px;
   overflow-y: scroll;

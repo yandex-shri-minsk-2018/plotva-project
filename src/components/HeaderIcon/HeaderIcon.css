@@ -1,0 +1,19 @@
+.header-icon {
+  display: block;
+  border: none;
+  background: none no-repeat center;
+  text-indent: -9999px;
+}
+
+.header-icon--add {
+  width: 20px;
+  height: 20px;
+  background-image: url(images/plus.svg);
+}
+
+.header-icon--write {
+  width: 20px;
+  height: 20px;
+  background-image: url(images/write.svg);
+  margin-bottom: 5px;
+}

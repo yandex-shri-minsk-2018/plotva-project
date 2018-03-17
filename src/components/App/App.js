@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {Layout} from '../Layout/Layout';
 import {Contacts} from '../Contacts/Contacts';
+import {Header} from "../Header/Header";
 import './App.css';
 
 export class App extends Component {
   render() {
     return (
-      <Layout header={'header'} content={
+      <Layout header={<Header title={'Contacts'} size={'sm'} subtitle={'subtitle'} />} content={
         <Contacts contacts = {
           [
             {
