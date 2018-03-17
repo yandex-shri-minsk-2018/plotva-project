@@ -26,5 +26,8 @@
     "eject": "react-scripts eject",
     "client": "react-scripts start",
     "server": "nodemon -w server.js -w src/server server.js"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1"
   }
 }
