@@ -8,6 +8,7 @@
   margin-left: 10px;
   display: inline-block;
   width: 100%;
+  height: 100%;
 }
 
 .content__header {
@@ -41,14 +42,17 @@
   color: #0981E1;
 }
 
-.contact__content_large {
+.contact_large {
   height: 62px;
+  margin-top: 8px;
 }
-.contact__content_medium {
+.contact_medium {
   height: 60px;
+  margin-top: 7px;
 }
-.contact__content_small {
+.contact_small {
   height: 40px;
+  margin-top: 4px;
 }
 
 .contact_small .content__name {

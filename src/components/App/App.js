@@ -7,7 +7,6 @@ class App extends Component {
         <Contacts contacts = {
           [
             {
-              userPic: 'https://odiorneinsurance.com/wp-content/uploads/2014/03/blue-eyed-cat-1024x1024.png',
               userName: 'Aaron A Aaronson',
               content: 'Some messege',
               contentType: 'messege',
@@ -15,14 +14,13 @@ class App extends Component {
               size: 'large'
             },
             {
-              userPic: 'https://odiorneinsurance.com/wp-content/uploads/2014/03/blue-eyed-cat-1024x1024.png',
               userName: 'Aaron A Aaronson',
               content: 'online',
               contentType: 'online',
               size: 'medium'
               
-            },{
-              userPic: 'https://odiorneinsurance.com/wp-content/uploads/2014/03/blue-eyed-cat-1024x1024.png',
+            },
+            {
               userName: 'Aaron A Aaronson',
               content: 'Some messege',
               contentType: 'messege',

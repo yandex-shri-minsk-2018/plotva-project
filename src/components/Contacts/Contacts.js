@@ -9,7 +9,6 @@ export class Contacts extends Component {
           this.props.contacts.map((contact, index) =>
             <Contact
               key = {index}
-              userPic = {contact.userPic}
               userName = {contact.userName}
               content = {contact.content}
               contentType = {contact.contentType}

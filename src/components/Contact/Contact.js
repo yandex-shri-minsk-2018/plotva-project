@@ -20,9 +20,12 @@ export class Contact extends Component {
               : false
             }
           </div>
-          <div className={`content__text content__text_${contentType}`}>
-            {content}
-          </div>  
+          { content
+            ? <div className={`content__text content__text_${contentType}`}>
+                {content}
+              </div>
+            : false
+          }
         </div>
       </div>
     );
