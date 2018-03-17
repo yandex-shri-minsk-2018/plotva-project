@@ -1,12 +1,10 @@
 .message-wrapper {
   display: flex;
-  flex-direction: row;
 
   padding: 0 56px 6px 6px;
 }
 
 .message-wrapper_my {
-  display: flex;
   flex-direction: row-reverse;
 
   padding: 0 6px 6px 56px;
