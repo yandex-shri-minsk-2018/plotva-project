@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+import {Layout} from './components/Layout/Layout';
 import registerServiceWorker from './registerServiceWorker';
 
 import api from './api';
@@ -88,5 +88,5 @@ import api from './api';
 })();
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Layout header={'header'} content={'content'} footer={'footer'}/>, document.getElementById('root'));
 registerServiceWorker();
