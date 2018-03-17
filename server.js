@@ -2,7 +2,7 @@ const {createServer} = require('./src/server/server');
 
 const {
     MONGO_USER = '',
-    MONGO_PASSWOR = '',
+    MONGO_PASSWORD = '',
     MONGO_LOCAL = 'false',
     MONGO_DATABSE = 'yandex-shri',
     MONGO_HOST = 'ds215759.mlab.com',
