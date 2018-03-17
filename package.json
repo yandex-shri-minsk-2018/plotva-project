@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "classnames": "^2.2.5",
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
@@ -12,6 +13,7 @@
     "mongodb": "^3.0.3",
     "nodemon": "^1.15.1",
     "react": "^16.2.0",
+    "react-autosize-textarea": "^3.0.2",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
     "socket.io": "^2.0.4",
