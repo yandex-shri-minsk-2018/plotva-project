@@ -1,7 +1,5 @@
 .input-bar {
-  position: relative;
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
   padding: 5px 0;
   background-color: #f9f9fa;
@@ -10,7 +8,7 @@
 
 .input-bar__input {
   flex-grow: 1;
-  margin: 5px 30px 5px 5px;
+  margin: 5px;
   padding: 15px;
   font-size: 1.1rem;
   font-weight: 400;
@@ -26,20 +24,21 @@
   outline: 1px solid #007aff;
 }
 
-.input-bar__icon {
-  position: absolute;
-  bottom: 20px;
+.input-bar__button {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
 
-.input-bar__icon--right {
-  right: -3px;
-}
-
-.icon {
+.input-bar__icon {
   width: 25px;
   height: 25px;
+  filter: grayscale(100%);
+  color: #979797;
   object-fit: contain;
+}
+
+.input-bar__icon_active {
+  filter: grayscale(0%);
+  color: #007aff;
 }

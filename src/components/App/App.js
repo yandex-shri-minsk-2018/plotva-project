@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { InputBar } from '../InputBar/InputBar';
 
 class App extends Component {
   render() {
