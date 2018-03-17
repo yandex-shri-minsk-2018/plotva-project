@@ -1,0 +1,27 @@
+.avatar {
+  display: inline-block;
+  overflow: hidden;   
+  border-radius: 100%;  
+}
+
+.avatar_large {
+  flex: 0 0 62px;  
+  width: 62px;
+  height: 62px;
+}
+
+.avatar_medium {
+  flex: 0 0 60px;  
+  width: 60px;
+  height: 60px;
+}
+
+.avatar_small {
+  flex: 0 0 40px;  
+  width: 40px;
+  height: 40px;
+}
+
+.avatar__img {
+  width: 100%;
+}

@@ -1,0 +1,60 @@
+.contact {
+  display: flex;
+  align-items: center;
+  padding-right: 10px; 
+}
+
+.contact__content {
+  margin-left: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.content__header {
+  padding-top: 7px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;  
+}
+
+.content__text {
+  display: inline-block;
+  overflow: hidden;
+  color: #8E8E93;  
+  font-size: 15px;  
+}
+
+.content__name {
+  font-weight: bold;
+}
+
+.content__time {
+  display: inline-block;  
+  color: #8E8E93;
+}
+
+.content__text_messege {
+  max-height: 32px;
+}
+
+.content__text_online {
+  color: #0981E1;
+}
+
+.contact__content_large {
+  height: 62px;
+}
+.contact__content_medium {
+  height: 60px;
+}
+.contact__content_small {
+  height: 40px;
+}
+
+.contact_small .content__name {
+  font-size: 18px;
+}
+
+.contact_small .content__text {
+  font-size: 13px;
+}
