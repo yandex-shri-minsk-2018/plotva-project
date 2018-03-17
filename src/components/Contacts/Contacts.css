@@ -9,13 +9,13 @@
 }
 
 .contact + .contact_large:before {
-  margin-left: 62px;
+  margin-left: 70px;
 }
 
 .contact + .contact_medium:before {
-  margin-left: 60px;
+  margin-left: 70px;
 }
 
 .contact + .contact_small:before {
-  margin-left: 40px;
+  margin-left: 52px;
 }

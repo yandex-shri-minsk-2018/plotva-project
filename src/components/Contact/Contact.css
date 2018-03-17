@@ -6,9 +6,18 @@
 }
 
 .contact__content {
-  margin-left: 10px;
   display: inline-block;
   width: 100%;
+}
+
+.contact_large .contact__content {
+  margin-left: 8px;
+}
+.contact_medium .contact__content {
+  margin-left: 10px;
+}
+.contact_small .contact__content {
+  margin-left: 12px;
 }
 
 .content__header {
