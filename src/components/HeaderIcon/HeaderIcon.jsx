@@ -3,7 +3,7 @@ import './HeaderIcon.css';
 
 export class HeaderIcon extends Component {
   render() {
-    let {type} = this.props;
+    let {type = "add"} = this.props;
 
     return (
       <button className={`header-icon header-icon_${type}`}>{type}</button>
