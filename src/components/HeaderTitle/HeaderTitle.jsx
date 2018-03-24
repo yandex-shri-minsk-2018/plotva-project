@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import './HeaderTitle.css';
 
-export class HeaderTitle extends Component {
-  render() {
-    let {title, subtitle} = this.props;
-    return (
-        <div>
-          <div className="header-title">{title}</div>
-          {subtitle && (
-            <div className="header-subtitle">{subtitle}</div>
-          )}
-        </div>
-      );
-  }
+export function HeaderTitle(props) {
+  let {title, subtitle} = props;
+  return (
+      <React.Fragment>
+        <div className="header-title">{title}</div>
+        {subtitle && (
+          <div className="header-subtitle">{subtitle}</div>
+        )}
+      </React.Fragment>
+    );
 }

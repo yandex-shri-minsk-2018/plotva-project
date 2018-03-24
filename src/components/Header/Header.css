@@ -4,11 +4,11 @@
 }
 
 .header_sm {
-  height: 2.6875rem;
+  height: 43px;
 }
 
 .header_lg {
-  height: 3.0625rem
+  height: 49px
 }
 
 .header__left, .header__right {
@@ -22,7 +22,7 @@
 }
 
 .header__right {
-  padding: 0 .4375rem;
+  padding-left: 7px;
   display: flex;
   justify-content: flex-end;
   align-items: center;

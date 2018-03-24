@@ -7,10 +7,13 @@ import './App.css';
 
 export class App extends Component {
   render() {
+    let page = "contacts",
+        title = "Contacts",
+        subtitle = "";
     return (
-      <Layout header={<Header title="" subtitle="" />} content={
+      <Layout header={<Header type={page} title={title} subtitle={subtitle} />} content={
         <div>
-          {/*<SearchInput/>*/}
+          {page === "contacts" && <SearchInput/>}
           <Contacts contacts = {
             [
               {

@@ -1,11 +1,11 @@
 .search {
   border: none;
-  height: 1.75rem;
+  height: 28px;
   border-radius: 6px;
-  padding: 0 .625rem 0 1.938rem;
-  font-size: .875rem;
+  padding: 0 10px 0 31px;
+  font-size: 14px;
   width: 100%;
-  background: #ededed url(images/search.svg) no-repeat .625rem center / .875rem;
+  background: #ededed url(images/search.svg) no-repeat 10px center / 14px;
 }
 
 .search,
@@ -24,6 +24,6 @@
 }
 
 .layout__content .search {
-  margin: .4375rem 0;
+  margin: 7px 0;
   text-align: center;
 }
