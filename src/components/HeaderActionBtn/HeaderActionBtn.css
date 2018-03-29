@@ -1,0 +1,11 @@
+.header-action {
+  background: none;
+  border: none;
+  color: #007aff;
+  font-size: 17px;
+}
+
+.header-action:focus {
+  outline: none;
+  text-shadow: 0 0 2px rgba(64, 64, 64, 0.12);
+}
