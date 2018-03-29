@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import { Layout } from '../Layout/Layout';
 import { Contacts } from '../Contacts/Contacts';
 import { Header } from '../Header/Header';
+import { SearchInput } from "../SearchInput/SearchInput";
+
 import './App.css';
 
 export class App extends Component {
   render() {
+    let page = "contacts",
+        title = "Contacts",
+        subtitle = "";
     return (
-      <Layout
-        header={<Header title="Contacts" size="sm" subtitle="subtitle" />}
-        content={
-          <Contacts
-            contacts={[
+
+      <Layout header={<Header type={page} title={title} subtitle={subtitle} />} content={
+        <div>
+          { page === "contacts" && <SearchInput/> }
+          <Contacts contacts = {
+            [
               {
                 userName: 'Aaron A Aaronson',
                 content: 'Some messege',

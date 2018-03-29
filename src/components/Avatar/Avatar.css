@@ -22,6 +22,12 @@
   height: 40px;
 }
 
+.avatar_xsmall {
+  flex: 0 0 37px;
+  width: 37px;
+  height: 37px;
+}
+
 .avatar__img {
   width: 100%;
   height: 100%;
