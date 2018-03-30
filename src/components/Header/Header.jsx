@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 import {HeaderIcon} from "../HeaderIcon/HeaderIcon";
 import {SearchInput} from "../SearchInput/SearchInput";
 import {HeaderTitle} from "../HeaderTitle/HeaderTitle";
@@ -16,7 +17,7 @@ export class Header extends Component {
       <div className={`header header_${size}`}>
         <div className="header__left">
           {type === "search" && <SearchInput />}
-          {type === "dialog" && <HeaderBackBtn txt="Back" />}
+          {type === "dialog" && <Link to="/chats"><HeaderBackBtn txt="Back" /></Link>}
         </div>
 
         {title && (
@@ -29,9 +30,9 @@ export class Header extends Component {
         )}
 
         <div className="header__right">
-          {type === "contacts" && <HeaderIcon type="add" />}
-          {type === "chats" && <HeaderIcon type="write" />}
-          {type === "search" && <HeaderActionBtn txt="Cancel"/>}
+          {type === "contacts" && <Link to="/search"><HeaderIcon type="add" /></Link>}
+          {type === "chats" && <Link to="/dialog"><HeaderIcon type="write" /></Link>}
+          {type === "search" && <Link to="/contacts"><HeaderActionBtn txt="Cancel"/></Link>}
           {type === "dialog" && <Avatar size="xsmall" />}
         </div>
       </div>
