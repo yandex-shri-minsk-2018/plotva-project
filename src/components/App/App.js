@@ -16,35 +16,35 @@ export class App extends Component {
         header={<Header type={page} title={title} subtitle={subtitle} />}
         content={
           <div>
-            {page === 'contacts' && <SearchInput />}
-            <Contacts
-              contacts={[
+            {page === "contacts" && <SearchInput/>}
+            <Contacts contacts = {
+              [
                 {
                   userName: 'Aaron A Aaronson',
                   content: 'Some messege',
                   contentType: 'messege',
                   time: '9:30',
                   size: 'medium',
-                  icon: 'x',
+                  icon: 'message-read'
                 },
                 {
                   userName: 'Aaron A Aaronson',
                   content: 'online',
                   contentType: 'online',
-                  size: 'medium',
+                  size: 'medium'
+
                 },
                 {
                   userName: 'Aaron A Aaronson',
                   content: 'Some messege',
                   contentType: 'messege',
-                  size: 'medium',
+                  size: 'medium'
                 },
-              ]}
-            />
+              ]
+            }/>
           </div>
         }
-        footer={'footer'}
-      />
+      footer={'footer'}/>
     );
   }
 }
