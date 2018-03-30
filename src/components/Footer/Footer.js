@@ -5,24 +5,9 @@ import SettingsIcon from './settings.svg';
 import FooterBtn from '../FooterBtn/FooterBtn.js';
 import './Footer.css';
 
-<<<<<<< HEAD
-class Footer extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      chatsActive: 1,
-      contactsActive: 0,
-      settingsActive: 0  
-    }
-    this.handleClick = this.handleClick.bind(this);
-  }
 
-  handleClick(){
-    console.log('hi');
-  }
-=======
 export class Footer extends Component {
->>>>>>> footer for demo
+
 
   render() {
     return (
