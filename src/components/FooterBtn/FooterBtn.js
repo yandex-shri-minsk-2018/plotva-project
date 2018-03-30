@@ -4,9 +4,9 @@ import './FooterBtn.css';
 class FooterBtn extends Component {
   render() {
     return (
-      <div onClick={this.props.onClick} className={this.props.active?"footer-icon":"footer-icon--passive"}>
-        <img src={this.props.source} className="footer-icon-logo" alt="" />
-        <p className="footer-icon-description">{this.props.description}</p>
+      <div onClick={this.props.onClick} className={this.props.active?"footer-btn":"footer-btn_passive"}>
+        <img src={this.props.source} className="footer-btn__logo" alt="" />
+        <p className="footer-btn__description">{this.props.description}</p>
       </div>
     );
   }

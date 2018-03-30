@@ -5,6 +5,7 @@ import SettingsIcon from './settings.svg';
 import FooterBtn from '../FooterBtn/FooterBtn.js';
 import './Footer.css';
 
+<<<<<<< HEAD
 class Footer extends Component {
   constructor(props){
     super(props);
@@ -19,13 +20,16 @@ class Footer extends Component {
   handleClick(){
     console.log('hi');
   }
+=======
+export class Footer extends Component {
+>>>>>>> footer for demo
 
   render() {
     return (
       <div className="footer">
-        <FooterBtn onClick={this.handleClick} source={ChatsIcon} description='Chats' active={this.state.chatsActive} />
-        <FooterBtn onClick={this.handleClick} source={ContactsIcon} description='Contacts' active={this.state.contactsActive} />
-        <FooterBtn onClick={this.handleClick} source={SettingsIcon} description='Settings' active={this.state.settingsActive} />
+        <FooterBtn onClick={this.props.changeTab} source={ChatsIcon} description='Chats'/>
+        <FooterBtn onClick={this.props.changeTab} source={ContactsIcon} description='Contacts'/>
+        <FooterBtn onClick={this.props.changeTab} source={SettingsIcon} description='Settings'/>
       </div>
     );
   }

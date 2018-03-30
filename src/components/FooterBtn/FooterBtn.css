@@ -1,14 +1,19 @@
-.footer-icon-logo {
+.footer-btn__logo {
   height: 26px;
 }
 
-.footer-icon-description {
+.footer-btn__description {
   color: #007AFF;
   font-size: 10px;  
   padding: 0;
   margin: 0;
 }
 
-.footer-icon--passive{
+.footer-btn_passive{
   filter: grayscale(100%);
+  text-align: center;
+}
+
+.footer-btn{
+  text-align: center;
 }

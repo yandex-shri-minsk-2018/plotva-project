@@ -1,9 +1,10 @@
-
 import React, { Component } from 'react';
 import { Layout } from '../Layout/Layout';
 import { Contacts } from '../Contacts/Contacts';
 import { Header } from '../Header/Header';
 import { SearchInput } from '../SearchInput/SearchInput';
+
+
 import {Footer} from '../Footer/Footer';
 
 
