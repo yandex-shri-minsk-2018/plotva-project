@@ -30,6 +30,22 @@
   font-size: 16px;  
 }
 
+.content__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__counter {
+  background: #8E8E93;
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  flex: 0 0 21px;
+  padding: 0 5px;
+  margin-right: 3px;
+}
+
 .content__text {
   display: inline-block;
   overflow: hidden;

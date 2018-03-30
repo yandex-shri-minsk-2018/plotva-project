@@ -12,34 +12,33 @@ export class App extends Component {
       title = 'Contacts',
       subtitle = '';
     return (
-      <Layout
-        header={<Header type={page} title={title} subtitle={subtitle} />}
-        content={
-          <div>
-            {page === "contacts" && <SearchInput/>}
-            <Contacts contacts = {
-              [
-                {
-                  userName: 'Aaron A Aaronson',
-                  content: 'Some messege',
-                  contentType: 'messege',
-                  time: '9:30',
-                  size: 'medium',
-                  icon: 'message-read'
+      <Layout header={<Header type={page} title={title} subtitle={subtitle} />} content={
+        <div>
+          {page === "contacts" && <SearchInput/>}
+          <Contacts contacts = {
+            [
+              {
+                userName: 'Aaron A Aaronson',
+                content: 'Some messege',
+                contentType: 'messege',
+                time: '9:30',
+                size: 'medium',
+                checked: true,
+                count: 3,
+                icon: 'message-read'
+              },
+              {
+                userName: 'Aaron A Aaronson',
+                content: 'online',
+                contentType: 'online',
+                size: 'medium'
                 },
-                {
-                  userName: 'Aaron A Aaronson',
-                  content: 'online',
-                  contentType: 'online',
-                  size: 'medium'
-
-                },
-                {
-                  userName: 'Aaron A Aaronson',
-                  content: 'Some messege',
-                  contentType: 'messege',
-                  size: 'medium'
-                },
+               {
+                userName: 'Aaron A Aaronson',
+                content: 'Some messege',
+                contentType: 'messege',
+                size: 'medium'
+              },
               ]
             }/>
           </div>
