@@ -22,7 +22,7 @@ export class App extends Component {
                 contentType: 'messege',
                 time: '9:30',
                 size: 'medium',
-                icon: 'x'
+                icon: 'message-read'
               },
               {
                 userName: 'Aaron A Aaronson',

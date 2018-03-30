@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Contact.css';
 
 import {Avatar} from '../Avatar/Avatar'
+import {Icon} from '../Icon/Icon'
 
 export function Contact(props) {
     let { userPic, userName, size = 'large', time, contentType = 'messege', content, icon } = props;
@@ -18,7 +19,9 @@ export function Contact(props) {
               ? <div className='content__time'>
                   {
                     icon
-                    ? <div className='content__icon'>{icon}</div>
+                    ? <div className='content__icon'>
+                        <Icon type={icon} />
+                      </div>
                     : false
                   }
                   {time}
