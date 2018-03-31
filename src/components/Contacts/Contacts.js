@@ -11,7 +11,7 @@ export class Contacts extends Component {
   render() {
     return (
       <React.Fragment>
-        <Link to="/dialog">
+        <Link to="/chat">
           <Contact
             userName="Lena Cohen"
             content="+65 8586 3216"
@@ -23,7 +23,7 @@ export class Contacts extends Component {
         <MenuAction text="Invite Friends" icon={addUserIcon} />
         <div className="contacts">
           {this.props.contacts.map((contact, index) => (
-            <Link to="/dialog"><Contact key={index} {...contact} /></Link>
+            <Link to={`/chat/${contact._id}`}><Contact key={index} {...contact} /></Link>
           ))}
         </div>
       </React.Fragment>

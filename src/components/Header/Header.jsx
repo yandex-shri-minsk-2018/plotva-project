@@ -31,7 +31,7 @@ export class Header extends Component {
 
         <div className="header__right">
           {type === "contacts" && <Link to="/search"><HeaderIcon type="add" /></Link>}
-          {type === "chats" && <Link to="/dialog"><HeaderIcon type="write" /></Link>}
+          {type === "chats" && <Link to="/chat"><HeaderIcon type="write" /></Link>}
           {type === "search" && <Link to="/contacts"><HeaderActionBtn txt="Cancel"/></Link>}
           {type === "dialog" && <Avatar size="xsmall" />}
         </div>
@@ -39,4 +39,3 @@ export class Header extends Component {
     );
   }
 }
-
