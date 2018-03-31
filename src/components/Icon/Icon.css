@@ -5,7 +5,7 @@
   background-size: cover;
 }
 
-.icon__message-sent , .icon__message-read {
+.icon__message-sent, .icon__message-read {
   color: #19c700;
   width: 14px;
   height: 14px;
@@ -17,4 +17,17 @@
 
 .icon__message-read {
   background-image: url(./img/read.svg);
+}
+
+.icon__header-add {
+  width: 20px;
+  height: 20px;
+  background-image: url(./img/plus.svg);
+}
+
+.icon__header-write {
+  width: 20px;
+  height: 20px;
+  background-image: url(./img/write.svg);
+  margin-bottom: 5px;
 }
