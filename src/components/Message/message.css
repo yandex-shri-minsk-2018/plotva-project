@@ -66,23 +66,7 @@
   color: #555;
 }
 
-.message__status {
-  right: 3px;
-
-  display: none;
-
-  width: 14px;
-
-  color: #19c700;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.message__status_sent {
-  background-image: url(./images/sent.svg);
-}
-
-.message__status_read {
-  background-image: url(./images/read.svg);
+.icon {
+  position: relative;
+  right: -3px;
 }
