@@ -2,8 +2,8 @@
   display: flex;
   width: 100%;
   align-items: center;
-  margin: 5px 0 15px;
-  padding: 5px 0;
+  margin: 5px 0 0;
+  padding: 5px;
   background-color: #f9f9fa;
   box-shadow: 0 -0.5px #b1b2b7;
 }
