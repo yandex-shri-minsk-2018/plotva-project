@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './Contact.css';
 
 import {Avatar} from '../Avatar/Avatar'
 import {Icon} from '../Icon/Icon'
+
 
 export function Contact(props) {
     const {
@@ -12,6 +14,7 @@ export function Contact(props) {
       content,
       count,
       icon,
+      link,
       size = 'large',
       contentType = 'messege',
       checked = false } = props;
@@ -53,6 +56,10 @@ export function Contact(props) {
             }
           </div>
         </div>
+        { link
+          ? <Link to={link} />   
+          : false     
+        }
       </div>
     );
   }
