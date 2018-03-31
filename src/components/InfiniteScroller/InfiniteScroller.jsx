@@ -20,7 +20,7 @@ export class InfiniteScroller extends Component {
     document.body.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll(e) {
+  handleScroll() {
     if (this.container) {
       const containerHeight = this.container.clientHeight;
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
