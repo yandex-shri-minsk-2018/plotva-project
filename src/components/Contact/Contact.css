@@ -41,9 +41,17 @@
   text-align: center;
   color: white;
   font-weight: bold;
-  flex: 0 0 21px;
-  padding: 0 5px;
   margin-right: 3px;
+  padding: 3px 8px;  
+}
+.content__counter_onedigit {
+  padding: 3px 8px;
+}
+.content__counter_twodigit {
+  padding: 3px 4px;
+}
+.content__counter_threedigit {
+  padding: 3px 4px;
 }
 
 .content__text {
