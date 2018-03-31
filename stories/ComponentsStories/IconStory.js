@@ -6,4 +6,9 @@ export default storiesOf('Icon', module)
   .add('Standart Icon', () => ([
     <Icon type = 'message-read'/>,
     <Icon type = 'message-sent'/>,
+    <Icon type = 'header-add'/>,
+    <Icon type = 'header-write'/>,
+    <Icon type = 'footer-chats'/>,
+    <Icon type = 'footer-contacts'/>,
+    <Icon type = 'footer-settings'/>,
   ]))
