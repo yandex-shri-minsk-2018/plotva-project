@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Footer } from '../../src/components/Footer/Footer';
+import { App } from '../../src/components/App/App';
 import { MemoryRouter } from 'react-router-dom';
 
 
-export default storiesOf('Footer', module)
-  .add('Standart footer', () => (
+export default storiesOf('App', module)
+  .add('App demo', () => (
     <MemoryRouter>
-      <Footer />
-    </MemoryRouter >
+      <App />
+    </MemoryRouter>
   ))

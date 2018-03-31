@@ -2,11 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Contacts } from '../../src/components/Contacts/Contacts';
+import { MemoryRouter } from 'react-router-dom';
 
-export default storiesOf('Contacts', module)
-  .add('Contacts list', () => (
-    <Contacts contacts = {
-      [
+export default storiesOf('Contacts', module).add('Contacts list', () => (
+  <MemoryRouter>
+    <Contacts
+      contacts={[
         {
           userName: 'Aaron A Aaronson',
           content: 'Some messege',
@@ -15,20 +16,21 @@ export default storiesOf('Contacts', module)
           size: 'medium',
           checked: true,
           count: 3,
-          icon: 'message-read'
+          icon: 'message-read',
         },
         {
           userName: 'Aaron A Aaronson',
           content: 'online',
           contentType: 'online',
-          size: 'medium'
-          },
-         {
+          size: 'medium',
+        },
+        {
           userName: 'Aaron A Aaronson',
           content: 'Some messege',
           contentType: 'messege',
-          size: 'medium'
+          size: 'medium',
         },
-        ]
-      }/>
-  ))
+      ]}
+    />
+  </MemoryRouter>
+));
