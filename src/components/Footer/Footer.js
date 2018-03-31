@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import ChatsIcon from './chats.svg';
 import ContactsIcon from './contacts.svg';
 import SettingsIcon from './settings.svg';
@@ -12,9 +13,13 @@ export class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <FooterBtn onClick={this.props.changeTab} source={ChatsIcon} description='Chats'/>
-        <FooterBtn onClick={this.props.changeTab} source={ContactsIcon} description='Contacts'/>
-        <FooterBtn onClick={this.props.changeTab} source={SettingsIcon} description='Settings'/>
+        <Link to="/chats">
+          <FooterBtn source={ChatsIcon} description='Chats'/>
+        </Link>
+        <Link to="/contacts">
+          <FooterBtn source={ContactsIcon} description='Contacts'/>
+        </Link>
+        {/*<FooterBtn onClick={this.props.changeTab} source={SettingsIcon} description='Settings'/>*/}
       </div>
     );
   }
