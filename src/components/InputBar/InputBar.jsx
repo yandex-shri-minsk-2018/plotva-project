@@ -26,7 +26,7 @@ export const InputBar = ({ value, onSubmit, ...rest }) => {
         placeholder="Write a message..."
         autoFocus
         autoComplete="off"
-        maxRows={2}
+        maxRows={4}
         value={value}
         onKeyDown={onKeyDown}
         {...rest}
