@@ -8,7 +8,7 @@ export class InfiniteScroller extends Component {
       isLoading: false,
     };
     this.container = null;
-    this.handleScroll = debounce(this.handleScroll.bind(this));
+    this.handleScroll = debounce(this.handleScroll.bind(this), 100);
     this.loadMore = this.loadMore.bind(this);
     this.setRef = this.setRef.bind(this);
   }
@@ -18,7 +18,7 @@ export class InfiniteScroller extends Component {
   }
 
   componentWillUnmount() {
-    document.body.removeEventListener('scroll', this.handleScroll);
+    document.body.removeEventListener('scroll', this.handleScroll, { capture: true });
   }
 
   handleScroll() {
