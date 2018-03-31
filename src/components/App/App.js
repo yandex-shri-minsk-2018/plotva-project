@@ -5,6 +5,7 @@ import { Header } from '../Header/Header';
 import { SearchInput } from '../SearchInput/SearchInput';
 import { Footer } from '../Footer/Footer';
 import { MessagesList } from "../MessagesList/MessagesList";
+import { InputBar } from "../InputBar/InputBar";
 import { Link, Route } from 'react-router-dom'
 import './App.css';
 
@@ -121,7 +122,7 @@ const DialogPage = () => (
         time: Date.now(),
       }]} />
   }
-          footer={<Footer />}/>
+          footer={<InputBar />}/>
 );
 
 export class App extends Component {
