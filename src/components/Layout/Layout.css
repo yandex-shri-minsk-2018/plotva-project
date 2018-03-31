@@ -7,12 +7,18 @@
 }
 
 .layout__header, .layout__footer {
-  padding: 0 8px;
-  flex: 1 0 auto;
+  display: flex;
+  align-items: stretch;
 }
 
 .layout__header {
   background-color: #f8f8f8;
+  padding: 0 8px;
+  flex: 1 0 auto;
+}
+
+.layout__footer {
+  flex: 1 0 auto;
 }
 
 .layout__content {
@@ -23,7 +29,9 @@
   flex: 0 1 100vh;
 }
 
-.layout__header, .layout__footer {
-  display: flex;
-  align-items: stretch;
+.layout__content a,
+.layout__footer a {
+  text-decoration: none;
+  color: inherit;
 }
+
