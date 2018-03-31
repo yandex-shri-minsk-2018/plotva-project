@@ -6,47 +6,55 @@ export class InfiniteScroller extends Component {
     this.state = {
       isLoading: false,
     };
+    this.container = null;
     this.handleScroll = this.handleScroll.bind(this);
     this.loadMore = this.loadMore.bind(this);
+    this.setRef = this.setRef.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', this.handleScroll, { passive: true });
+    document.body.addEventListener('scroll', this.handleScroll, { passive: true, capture: true });
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', this.handleScroll);
+    document.body.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll(e) {
-    const windowHeight = window.innerHeight;
-    const currentScroll = e.target.documentElement.scrollTop;
-    if (!this.state.isLoading) {
-      const maxScroll = e.target.documentElement.offsetHeight - windowHeight;
-      if (currentScroll + windowHeight > maxScroll) {
-        this.loadMore();
+    if (this.container) {
+      const containerHeight = this.container.clientHeight;
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      if (!this.state.isLoading) {
+        if (scrollTop + windowHeight >= containerHeight - 500) {
+          this.loadMore();
+        }
       }
     }
   }
 
   loadMore() {
     this.setState({
-      loading: true,
+      isLoading: true,
     });
 
     this.props.loadMore().finally(() => {
-      this.setState({ loading: false });
+      this.setState({ isLoading: false });
     });
+  }
+
+  setRef(node) {
+    this.container = node;
   }
 
   render() {
     return this.state.isLoading ? (
       'Loading...'
     ) : (
-      <React.Fragment>
+      <div ref={this.setRef}>
         {this.props.children}
         <button onClick={this.loadMore}>Load more</button>
-      </React.Fragment>
+      </div>
     );
   }
 }
