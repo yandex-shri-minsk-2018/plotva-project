@@ -31,3 +31,27 @@
   background-image: url(./img/write.svg);
   margin-bottom: 5px;
 }
+
+.icon__footer-chats {
+  width: 30px;
+  height: 26px;
+  background-image: url(./img/chats.svg);
+}
+
+.icon__footer-contacts {
+  width: 26px;
+  height: 26px;
+  background-image: url(./img/contacts.svg);
+}
+
+.icon__footer-logo {
+  width: 26px;
+  height: 26px;
+  background-image: url(./img/logo.svg);
+}
+
+.icon__footer-settings {
+  width: 26px;
+  height: 26px;
+  background-image: url(./img/settings.svg);
+}
