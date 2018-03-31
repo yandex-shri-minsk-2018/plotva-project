@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import debounce from 'debounce';
 
 export class InfiniteScroller extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export class InfiniteScroller extends Component {
       isLoading: false,
     };
     this.container = null;
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = debounce(this.handleScroll.bind(this));
     this.loadMore = this.loadMore.bind(this);
     this.setRef = this.setRef.bind(this);
   }
@@ -22,11 +23,11 @@ export class InfiniteScroller extends Component {
 
   handleScroll() {
     if (this.container) {
-      const containerHeight = this.container.clientHeight;
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
+      const maxScroll = this.container.clientHeight - windowHeight;
       if (!this.state.isLoading) {
-        if (scrollTop + windowHeight >= containerHeight - 500) {
+        if (scrollTop + windowHeight >= maxScroll) {
           this.loadMore();
         }
       }
