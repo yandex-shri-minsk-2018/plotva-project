@@ -1,4 +1,3 @@
-export * from './ComponentsStories/ContactStory';
 export * from './ComponentsStories/ContactsStory';
 export * from './ComponentsStories/HeaderStory';
 export * from './ComponentsStories/FooterStory';
@@ -7,3 +6,5 @@ export * from './ComponentsStories/MessageListStory';
 export * from './ComponentsStories/AppStory';
 export * from './ComponentsStories/AvatarStory';
 export * from './ComponentsStories/IconStory';
+export * from './ComponentsStories/FooterBtnStory';
+export * from './ComponentsStories/HeaderBtnStory';

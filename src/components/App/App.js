@@ -6,7 +6,7 @@ import { SearchInput } from '../SearchInput/SearchInput';
 import { Footer } from '../Footer/Footer';
 import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 const ContactsPage = () => (

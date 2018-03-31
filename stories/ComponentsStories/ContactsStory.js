@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { Contacts } from '../../src/components/Contacts/Contacts';
 import { MemoryRouter } from 'react-router-dom';
 

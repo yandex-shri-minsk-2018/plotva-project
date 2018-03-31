@@ -42,7 +42,10 @@
   color: white;
   font-weight: bold;
   margin-right: 3px;
-  padding: 3px 8px;  
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
 }
 .content__counter_onedigit {
   padding: 3px 8px;
