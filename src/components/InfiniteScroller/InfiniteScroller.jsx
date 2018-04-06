@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import debounce from 'debounce';
 
 export class InfiniteScroller extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export class InfiniteScroller extends Component {
       isLoading: false,
     };
     this.container = null;
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = debounce(this.handleScroll.bind(this), 100);
     this.loadMore = this.loadMore.bind(this);
     this.setRef = this.setRef.bind(this);
   }
@@ -17,16 +18,16 @@ export class InfiniteScroller extends Component {
   }
 
   componentWillUnmount() {
-    document.body.removeEventListener('scroll', this.handleScroll);
+    document.body.removeEventListener('scroll', this.handleScroll, { capture: true });
   }
 
-  handleScroll(e) {
+  handleScroll() {
     if (this.container) {
-      const containerHeight = this.container.clientHeight;
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
+      const maxScroll = this.container.clientHeight - windowHeight;
       if (!this.state.isLoading) {
-        if (scrollTop + windowHeight >= containerHeight - 500) {
+        if (scrollTop + windowHeight >= maxScroll) {
           this.loadMore();
         }
       }
@@ -38,9 +39,12 @@ export class InfiniteScroller extends Component {
       isLoading: true,
     });
 
-    this.props.loadMore().finally(() => {
-      this.setState({ isLoading: false });
-    });
+    this.props
+      .loadMore()
+      .catch(error => console.log('Error', error))
+      .finally(() => {
+        this.setState({ isLoading: false });
+      });
   }
 
   setRef(node) {

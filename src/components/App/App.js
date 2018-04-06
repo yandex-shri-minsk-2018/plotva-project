@@ -7,9 +7,9 @@ import { SearchInput } from '../SearchInput/SearchInput';
 import { Contacts } from '../Contacts/Contacts';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
 import { Chat } from '../Chat/Chat';
+import { UserList } from "../UserList/UserList";
 import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
-
 
 import './App.css';
 
@@ -19,32 +19,7 @@ const ContactsPage = () => (
     content={
       <React.Fragment>
         <SearchInput />
-        <Contacts
-          contacts={[
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'Some messege',
-              contentType: 'messege',
-              time: '9:30',
-              size: 'medium',
-              checked: true,
-              count: 3,
-              icon: 'message-read',
-            },
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'online',
-              contentType: 'online',
-              size: 'medium',
-            },
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'Some messege',
-              contentType: 'messege',
-              size: 'medium',
-            },
-          ]}
-        />
+        <UserList />
       </React.Fragment>
     }
     footer={<Footer />}

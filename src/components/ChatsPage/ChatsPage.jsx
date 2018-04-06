@@ -41,7 +41,7 @@ export class ChatsPage extends PureComponent {
     const res = await api.getCurrentUserRooms(next);
     const rooms = await Promise.all(
       res.items.map(async room => {
-        const messages = await this.fetchMessage(room._id);
+        const messages = await api.getRoomMessages(room._id);
         return {
           _id: room._id,
           userName: room.name,
@@ -55,17 +55,12 @@ export class ChatsPage extends PureComponent {
     };
   }
 
-  async fetchMessage(roomId) {
-    const messages = await api.getRoomMessages(roomId);
-    return messages;
-  }
-
   render() {
     const { rooms, error } = this.state;
     return (
       <InfiniteScroller loadMore={this.fetchNext}>
         <Contacts contacts={rooms} />
-        { error ? <div>Error has been occured</div> : null}
+        {error ? <div>Error has been occured</div> : null}
       </InfiniteScroller>
     );
   }
