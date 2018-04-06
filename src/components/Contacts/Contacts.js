@@ -10,10 +10,18 @@ export class Contacts extends Component {
   render() {
     return (
       <React.Fragment>
+        <Link to="/chat">
+          <Contact
+            userName="Lena Cohen"
+            content="+65 8586 3216"
+            size="large"
+            contentType="messege"
+          />
+        </Link>
         <SectionTitle title="Contacts" />
         <div className="contacts">
           {this.props.contacts.map((contact, index) => (
-            <Link key={index} to="/dialog"><Contact {...contact} /></Link>
+            <Link to={`/chat/${contact._id}`}><Contact key={index} {...contact} /></Link>
           ))}
         </div>
       </React.Fragment>

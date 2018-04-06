@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
-import { Contacts } from '../Contacts/Contacts';
 import { Header } from '../Header/Header';
-import { SearchInput } from '../SearchInput/SearchInput';
 import { Footer } from '../Footer/Footer';
+import { SearchInput } from '../SearchInput/SearchInput';
+import { Contacts } from '../Contacts/Contacts';
+import { ChatsPage } from '../ChatsPage/ChatsPage';
+import { Chat } from '../Chat/Chat';
+import { UserList } from "../UserList/UserList";
 import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
-import { UserList } from "../UserList/UserList";
-import { Link, Route } from 'react-router-dom';
+
 import './App.css';
-import { ChatsPage } from '../ChatsPage/ChatsPage';
 
 const ContactsPage = () => (
   <Layout
@@ -66,24 +68,7 @@ const SearchPage = () => (
 const DialogPage = () => (
   <Layout
     header={<Header type="dialog" title="Dialog Name" subtitle="last seen yesterday" />}
-    content={
-      <MessagesList
-        messages={[
-          {
-            isMy: false,
-            text: 'Здарова, бандиты',
-            status: 'read',
-            time: Date.now(),
-          },
-          {
-            isMy: true,
-            text: 'И тебе здарова',
-            status: 'sent',
-            time: Date.now(),
-          },
-        ]}
-      />
-    }
+    content={<Chat />}
     footer={<InputBar />}
   />
 );
@@ -91,13 +76,13 @@ const DialogPage = () => (
 export class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <Switch>
         <Route exact path="/" component={ChatView} />
         <Route exact path="/chats" component={ChatView} />
         <Route exact path="/contacts" component={ContactsPage} />
-        <Route exact path="/dialog" component={DialogPage} />
+        <Route exact path="/chat/:id" component={DialogPage} />
         <Route exact path="/search" component={SearchPage} />
-      </React.Fragment>
+      </Switch>
     );
   }
 }
