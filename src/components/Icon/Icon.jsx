@@ -4,6 +4,6 @@ import './Icon.css';
 export function Icon (props) {
   let {type} = props;
   return (
-      <span className={`icon icon__${type}`} />
+      <span className={`icon icon_${type}`} />
     );
 }

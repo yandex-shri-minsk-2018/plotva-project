@@ -1,15 +1,16 @@
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import { Contacts } from '../Contacts/Contacts';
 import { Contact } from "../Contact/Contact";
+
+import { connect } from 'react-redux';
+
 import api from '../../../src/api.js'
 
-export class UserList extends Component {
+class UserListComponent extends PureComponent {
   state = {
-      users: [],
-      currentUser: {},
-      error: null
-    };
-
+    users: [],
+    error: null
+  };
 
   async fetch(param) {
 
@@ -19,7 +20,7 @@ export class UserList extends Component {
 
     try {
       let resp = await api.getUsers(param),
-          next = resp.next;
+        next = resp.next;
       this.setState((prevState) => ({
         users: prevState.users.concat(resp.items.map((user) => {
           const status = user.online ? 'online' : 'offline';
@@ -40,21 +41,15 @@ export class UserList extends Component {
 
   componentDidMount() {
     this.fetch();
-    api.getCurrentUser()
-      .then((data) => this.setState({currentUser: data}))
-      .catch((err) => {
-          console.error(err);
-          this.setState({error: err});
-      })
   }
 
   render() {
-    const { currentUser, users, error } = this.state;
+    const { users, error } = this.state;
     return (
       <React.Fragment>
         <Contact
-          userName={currentUser.name}
-          content={currentUser.phone}
+          userName={this.props.user.name}
+          content={this.props.user.phone}
           size="large"
           contentType="message"
         />
@@ -63,3 +58,9 @@ export class UserList extends Component {
     );
   }
 }
+
+const stateToProps = (state) => ({
+  user: state.user
+});
+
+export const UserList = connect(stateToProps)(UserListComponent);
