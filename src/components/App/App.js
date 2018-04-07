@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
@@ -8,9 +8,7 @@ import { Contacts } from '../Contacts/Contacts';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
 import { Chat } from '../Chat/Chat';
 import { UserList } from "../UserList/UserList";
-import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
-import { Route } from 'react-router-dom';
 
 import './App.css';
 
