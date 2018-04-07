@@ -16,7 +16,7 @@ export function Contact(props) {
       icon,
       link,
       size = 'large',
-      contentType = 'messege',
+      contentType = 'message',
       checked = false } = props;
     return (
       <div className={`contact contact_${size}`}>

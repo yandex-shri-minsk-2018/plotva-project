@@ -12,7 +12,7 @@ export class Contacts extends Component {
             userName="Lena Cohen"
             content="+65 8586 3216"
             size="large"
-            contentType="messege"
+            contentType="message"
             link="/chat"
           />
         <SectionTitle title="Contacts" />

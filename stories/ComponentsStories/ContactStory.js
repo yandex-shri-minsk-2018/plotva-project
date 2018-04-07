@@ -8,55 +8,55 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='medium'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='medium'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='medium'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='small'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='small'
-      contentType='messege'
+      contentType='message'
     />,
     <Contact
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='small'
-      contentType='messege'
+      contentType='message'
     />
   ]))
   .add('checked', () => (
@@ -64,7 +64,7 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
       checked='true'
     />
   ))
@@ -73,7 +73,7 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
       time='9:00'
     />
   ))
@@ -82,7 +82,7 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
       count='9'
     />
   ))
@@ -91,7 +91,7 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
       time='9:00'      
       count='9'
       icon='message-sent'
@@ -100,7 +100,7 @@ export default storiesOf('Contact', module)
       userName='Lena Cohen'
       content='+65 8586 3216'
       size='large'
-      contentType='messege'
+      contentType='message'
       time='9:00'      
       count='9'
       icon='message-read'

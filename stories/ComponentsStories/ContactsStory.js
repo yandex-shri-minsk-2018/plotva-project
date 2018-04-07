@@ -9,8 +9,8 @@ export default storiesOf('Contacts', module).add('Contacts list', () => (
       contacts={[
         {
           userName: 'Aaron A Aaronson',
-          content: 'Some messege',
-          contentType: 'messege',
+          content: 'Some message',
+          contentType: 'message',
           time: '9:30',
           size: 'medium',
           checked: true,
@@ -25,8 +25,8 @@ export default storiesOf('Contacts', module).add('Contacts list', () => (
         },
         {
           userName: 'Aaron A Aaronson',
-          content: 'Some messege',
-          contentType: 'messege',
+          content: 'Some message',
+          contentType: 'message',
           size: 'medium',
         },
       ]}

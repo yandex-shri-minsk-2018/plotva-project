@@ -37,8 +37,8 @@ const SearchPage = () => (
         contacts={[
           {
             userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
+            content: 'Some message',
+            contentType: 'message',
             time: '9:30',
             size: 'medium',
             checked: true,
@@ -53,8 +53,8 @@ const SearchPage = () => (
           },
           {
             userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
+            content: 'Some message',
+            contentType: 'message',
             size: 'medium',
           },
         ]}
