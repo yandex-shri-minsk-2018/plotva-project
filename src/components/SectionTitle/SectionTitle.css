@@ -1,6 +1,7 @@
 .section-title {
   height: 28px;
   padding: 6.5px 10px;
+  margin: 0 -8px;
   font-size: 12px;
   letter-spacing: 1px;
   line-height: 15px;
