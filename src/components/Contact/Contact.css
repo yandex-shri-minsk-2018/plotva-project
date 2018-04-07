@@ -30,19 +30,22 @@
 }
 
 .content__body {
+  padding-top: 7px;  
   display: flex;
   justify-content: space-between;
 }
 
 .content__counter {
-  background: #8E8E93;
-  border-radius: 100%;
+  background: royalblue;
+  border-radius: 12px;
   text-align: center;
   color: white;
   font-weight: bold;
-  flex: 0 0 21px;
-  padding: 0 5px;
-  margin-right: 3px;
+  padding: 0 8px;
+  min-width: 24px;  
+  line-height: 24px;  
+  vertical-align: middle;
+  font-size: 12px;
 }
 
 .content__text {
@@ -63,7 +66,7 @@
 .content__time {
   display: inline-block;  
   color: #8E8E93;
-  flex: 0 0 55px;
+  min-width: 55px;
 }
 
 .content__icon {
@@ -71,7 +74,7 @@
   padding: 0 5px;
 }
 
-.content__text_messege {
+.content__text_message {
   max-height: 32px;
 }
 

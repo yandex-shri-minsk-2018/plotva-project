@@ -1,0 +1,20 @@
+.headerBtn {
+  border: none;
+  color: #007aff;
+  font-size: 17px;
+}
+
+.headerBtn:focus {
+  outline: none;
+  text-shadow: 0 0 2px rgba(64, 64, 64, 0.12);
+}
+
+.headerBtn_action {
+  background: none;
+}
+
+.headerBtn_back {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 320'%3E%3Cpath fill='%23007aff' d='M192 32.4L159.7 0 0 160l159.7 160 32.3-32.4L64.7 160z'/%3E%3C/svg%3E%0A") no-repeat 0 center / auto 21px;
+  height: 100%;
+  padding-left: 18px;
+}

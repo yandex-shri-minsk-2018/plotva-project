@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
@@ -8,7 +8,6 @@ import { Contacts } from '../Contacts/Contacts';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
 import { Chat } from '../Chat/Chat';
 import { UserList } from "../UserList/UserList";
-import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
 
 import './App.css';
@@ -38,8 +37,8 @@ const SearchPage = () => (
         contacts={[
           {
             userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
+            content: 'Some message',
+            contentType: 'message',
             time: '9:30',
             size: 'medium',
             checked: true,
@@ -54,8 +53,8 @@ const SearchPage = () => (
           },
           {
             userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
+            content: 'Some message',
+            contentType: 'message',
             size: 'medium',
           },
         ]}

@@ -1,5 +1,6 @@
 import React from 'react';
 import './message.css';
+import {Icon} from "../Icon/Icon";
 
 const formatOptions = {
   hour: 'numeric',
@@ -16,7 +17,7 @@ export const Message = ({ isMy, text, status = 'sent', time }) => {
       <div className={`message ${isMy ? 'message_my' : ''}`}>
         {text}
         <span className="message__time">{timeFormatted}</span>
-        <span className={`message__status message__status_${status}`} />
+        <Icon type={`message-${status}`}/>
       </div>
     </div>
   );
