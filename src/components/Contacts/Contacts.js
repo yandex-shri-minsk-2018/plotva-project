@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Contact } from '../Contact/Contact';
-import { MenuAction } from '../MenuAction/MenuAction';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom'
 
 import './Contacts.css';
-import addUserIcon from './images/add-user.svg';
 
 export class Contacts extends Component {
   render() {
     return (
       <React.Fragment>
+        <Link to="/chat" >
           <Contact
             userName="Lena Cohen"
             content="+65 8586 3216"
@@ -17,11 +17,11 @@ export class Contacts extends Component {
             contentType="messege"
             link="/dialog"
           />
+        </Link>
         <SectionTitle title="Contacts" />
-        <MenuAction text="Invite Friends" icon={addUserIcon} />
         <div className="contacts">
           {this.props.contacts.map((contact, index) => (
-            <Contact key={index} {...contact} />
+            <Link to={`/chat/${contact._id}`}><Contact key={index} {...contact} /></Link>
           ))}
         </div>
       </React.Fragment>

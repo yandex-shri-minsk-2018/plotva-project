@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
-import { Contacts } from '../Contacts/Contacts';
 import { Header } from '../Header/Header';
-import { SearchInput } from '../SearchInput/SearchInput';
 import { Footer } from '../Footer/Footer';
+import { SearchInput } from '../SearchInput/SearchInput';
+import { Contacts } from '../Contacts/Contacts';
+import { ChatsPage } from '../ChatsPage/ChatsPage';
+import { Chat } from '../Chat/Chat';
+import { UserList } from "../UserList/UserList";
 import { MessagesList } from '../MessagesList/MessagesList';
 import { InputBar } from '../InputBar/InputBar';
 import { Route } from 'react-router-dom';
+
 import './App.css';
 
 const ContactsPage = () => (
@@ -15,71 +20,15 @@ const ContactsPage = () => (
     content={
       <React.Fragment>
         <SearchInput />
-        <Contacts
-          contacts={[
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'Some messege',
-              contentType: 'messege',
-              time: '9:30',
-              size: 'medium',
-              checked: true,
-              count: 3,
-              icon: 'message-read'
-            },
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'online',
-              contentType: 'online',
-              size: 'medium'
-            },
-            {
-              userName: 'Aaron A Aaronson',
-              content: 'Some messege',
-              contentType: 'messege',
-              size: 'medium'
-            }
-          ]}
-        />
+        <UserList />
       </React.Fragment>
     }
     footer={<Footer />}
   />
 );
 
-const ChatsPage = () => (
-  <Layout
-    header={<Header type="chats" title="Chats" subtitle="" />}
-    content={
-      <Contacts
-        contacts={[
-          {
-            userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
-            time: '9:30',
-            size: 'medium',
-            checked: true,
-            count: 3,
-            icon: 'message-read'
-          },
-          {
-            userName: 'Aaron A Aaronson',
-            content: 'online',
-            contentType: 'online',
-            size: 'medium'
-          },
-          {
-            userName: 'Aaron A Aaronson',
-            content: 'Some messege',
-            contentType: 'messege',
-            size: 'medium'
-          }
-        ]}
-      />
-    }
-    footer={<Footer />}
-  />
+const ChatView = () => (
+  <Layout header={<Header type="chats" title="Chats" subtitle="" />} content={<ChatsPage />} footer={<Footer />} />
 );
 
 const SearchPage = () => (
@@ -96,20 +45,20 @@ const SearchPage = () => (
             size: 'medium',
             checked: true,
             count: 3,
-            icon: 'message-read'
+            icon: 'message-read',
           },
           {
             userName: 'Aaron A Aaronson',
             content: 'online',
             contentType: 'online',
-            size: 'medium'
+            size: 'medium',
           },
           {
             userName: 'Aaron A Aaronson',
             content: 'Some messege',
             contentType: 'messege',
-            size: 'medium'
-          }
+            size: 'medium',
+          },
         ]}
       />
     }
@@ -119,31 +68,8 @@ const SearchPage = () => (
 
 const DialogPage = () => (
   <Layout
-    header={
-      <Header
-        type="dialog"
-        title="Dialog Name"
-        subtitle="last seen yesterday"
-      />
-    }
-    content={
-      <MessagesList
-        messages={[
-          {
-            isMy: false,
-            text: 'Здарова, бандиты',
-            status: 'read',
-            time: Date.now()
-          },
-          {
-            isMy: true,
-            text: 'И тебе здарова',
-            status: 'sent',
-            time: Date.now()
-          }
-        ]}
-      />
-    }
+    header={<Header type="dialog" title="Dialog Name" subtitle="last seen yesterday" />}
+    content={<Chat />}
     footer={<InputBar />}
   />
 );
@@ -151,13 +77,13 @@ const DialogPage = () => (
 export class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Route exact path="/" component={ChatsPage} />
-        <Route exact path="/chats" component={ChatsPage} />
+      <Switch>
+        <Route exact path="/" component={ChatView} />
+        <Route exact path="/chats" component={ChatView} />
         <Route exact path="/contacts" component={ContactsPage} />
-        <Route exact path="/dialog" component={DialogPage} />
+        <Route exact path="/chat/:id" component={DialogPage} />
         <Route exact path="/search" component={SearchPage} />
-      </React.Fragment>
+      </Switch>
     );
   }
 }

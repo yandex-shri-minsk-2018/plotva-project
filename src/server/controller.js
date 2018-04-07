@@ -204,7 +204,7 @@ module.exports = function (db, io) {
             return message;
         });
 
-        // Send message
+        // Get messages
         requestResponse(TYPES.MESSAGES, (payload) => getMessages(db, payload));
 
         userPromise.then(async (user) => {
