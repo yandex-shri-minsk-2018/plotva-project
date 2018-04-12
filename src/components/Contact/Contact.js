@@ -15,12 +15,17 @@ export function Contact(props) {
       count,
       icon,
       link,
+      color,
       size = 'large',
       contentType = 'message',
       checked = false } = props;
+
+      let defaultName = '';
+      userName && userName.split(' ').forEach(word => defaultName += word[0]);
+
     return (
       <div className={`contact contact_${size}`}>
-        <Avatar img={userPic} size={size} checked={checked}/>
+        <Avatar img={userPic} size={size} checked={checked} defaultName={ defaultName } color={color}/>
         <div className='contact__content'>
           <div className='content__header'>
             <div className='content__name'>
