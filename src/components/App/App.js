@@ -5,10 +5,10 @@ import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { SearchInput } from '../SearchInput/SearchInput';
 import { Contacts } from '../Contacts/Contacts';
+import { UserList } from '../UserList/UserList';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
 import { Chat } from '../Chat/Chat';
-import { UserList } from "../UserList/UserList";
-import { InputBar } from '../InputBar/InputBar';
+import { ChatForm } from '../ChatForm/ChatForm';
 
 import './App.css';
 
@@ -68,7 +68,7 @@ const DialogPage = () => (
   <Layout
     header={<Header type="dialog" title="Dialog Name" subtitle="last seen yesterday" />}
     content={<Chat />}
-    footer={<InputBar />}
+    footer={<ChatForm />}
   />
 );
 

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './store/store';
-import { setUser } from './store/actions/actionCreators';
+import { setUser } from './store/actions/userActions';
 import { App } from './components/App/App';
 import api from './api';
 
@@ -94,18 +94,16 @@ import registerServiceWorker from './registerServiceWorker';
 //   console.log(api);
 // })();
 
-
 (async () => {
   const user = await api.getCurrentUser();
   user && store.dispatch(setUser(user));
+  ReactDOM.render(
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>,
+    document.getElementById('root'),
+  );
+  registerServiceWorker();
 })();
-
-ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>,
-  document.getElementById('root'),
-);
-registerServiceWorker();
