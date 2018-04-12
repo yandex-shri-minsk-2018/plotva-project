@@ -32,7 +32,7 @@ class ChatComponent extends PureComponent {
     const { messages, match } = this.props;
     return (
       <InfiniteScroller loadMore={this.fetchNext}>
-        {messages[match.params.id] && <MessagesList messages={messages[match.params.id].messages} />}
+        {messages[match.params.id] ? <MessagesList messages={messages[match.params.id].messages} /> : null}
       </InfiniteScroller>
     );
   }
