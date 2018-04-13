@@ -59,6 +59,15 @@ class Api {
     }
 
     /**
+     * Save given yser into DB
+     *
+     * @return {Promise<User>}
+     */
+    async saveUser(user) {
+        return this._requestResponse(MESSAGES.USER_SAVE, user);
+    }
+
+    /**
      * Return all known users
      *
      * @param {{ [limit]: number, [_id]: string }} [filter] - you can pass next object here

@@ -79,5 +79,6 @@ async function getUsers(db, filter) {
 module.exports = {
     findUserBySid,
     getUsers,
-    getUser
+    getUser,
+    saveUser
 };

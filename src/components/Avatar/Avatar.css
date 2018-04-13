@@ -5,11 +5,13 @@
   position: relative;
 }
 
+
 .avatar_large {
   flex: 0 0 62px;  
   width: 62px;
   height: 62px;
   line-height: 62px;
+  font-size: 35px;
 }
 
 .avatar_medium {
@@ -17,6 +19,7 @@
   width: 60px;
   height: 60px;
   line-height: 60px;
+  font-size: 35px;
 }
 
 .avatar_small {
@@ -24,6 +27,8 @@
   width: 40px;
   height: 40px;
   line-height: 40px;
+  font-size: 15px;
+  
 }
 
 .avatar_xsmall {
@@ -31,6 +36,14 @@
   width: 37px;
   height: 37px;
   line-height: 37px;
+  font-size: 15px;
+}
+
+.avatar_default {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-weight: bold;
 }
 
 .avatar__img {

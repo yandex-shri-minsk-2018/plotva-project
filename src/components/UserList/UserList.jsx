@@ -52,6 +52,7 @@ class UserListComponent extends PureComponent {
           content={this.props.user.phone}
           size="large"
           contentType="message"
+          color="7"
         />
         {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users}/>}
       </React.Fragment>

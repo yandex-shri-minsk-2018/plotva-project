@@ -1,4 +1,4 @@
-const {findUserBySid, getUsers} = require('./database/user');
+const {findUserBySid, getUsers, saveUser} = require('./database/user');
 const {joinRoom, leaveRoom, getRooms, getUserRooms, createRoom} = require('./database/room');
 const {getMessages, sendMessage} = require('./database/messages');
 const TYPES = require('./messages');
@@ -131,6 +131,11 @@ module.exports = function (db, io) {
         // Return list of all users with
         requestResponse(TYPES.USERS, async (params) => {
             return fillUsersWithStatus(await getUsers(db, params || {}));
+        });
+
+        // Save user
+        requestResponse(TYPES.USER_SAVE, async (params) => {
+            return await saveUser(db, params);
         });
 
         // Create room
