@@ -10,7 +10,7 @@
   background-color: transparent;
 }
 
-.menu-action::after {
+/* .menu-action::after {
   margin-left: 60px;
   content: '';
   background-color: #C9C8CD;
@@ -18,7 +18,7 @@
   position: absolute;
   bottom: 0;
   width: calc(100% - 60px);
-}
+} */
 
 .menu-action:hover, .menu-action:focus, .menu-action:active {
   outline: none;
