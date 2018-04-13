@@ -10,6 +10,11 @@ module.exports = {
     USERS: 'USERS',
 
     /**
+     * Save user
+     */
+    USER_SAVE: 'USER_SAVE',
+
+    /**
      * Change online status of user
      */
     ONLINE: 'ONLINE',
