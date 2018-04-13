@@ -3,39 +3,24 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { InfiniteScroller } from '../InfiniteScroller/InfiniteScroller';
 import { MessagesList } from '../MessagesList/MessagesList';
-import api from '../../api';
-
+import { fetchMessages } from '../../store/actions/messagesActions';
 
 class ChatComponent extends PureComponent {
   constructor() {
     super();
     this.state = {
-      messages: [],
-      next: null,
       error: null,
     };
     this.fetchNext = this.fetchNext.bind(this);
   }
 
-  async componentDidMount() {
-    this.fetchNext(true);
+  componentDidMount() {
+    this.fetchNext();
   }
 
-  async fetchNext(next = this.state.next) {
+  async fetchNext() {
     try {
-      if (next) {
-        const response = await api.getRoomMessages(this.props.match.params.id);
-        const messages = response.items.map(message => ({
-          text: message.message,
-          time: message.created_at,
-          isMy: this.props.user._id === message.userId,
-        }));
-        this.setState({
-          messages,
-          next: response.next,
-        })
-        return response;
-      }
+      await this.props.fetchMessages(this.props.match.params.id);
     } catch (error) {
       this.setState({
         error,
@@ -44,16 +29,18 @@ class ChatComponent extends PureComponent {
   }
 
   render() {
+    const { messages, match } = this.props;
     return (
       <InfiniteScroller loadMore={this.fetchNext}>
-        <MessagesList messages={this.state.messages} />
+        {messages[match.params.id] ? <MessagesList messages={messages[match.params.id].messages} /> : null}
       </InfiniteScroller>
     );
   }
 }
 
-const stateToProps = (state) => ({
+const stateToProps = state => ({
   user: state.user,
+  messages: state.messages,
 });
 
-export const Chat = withRouter(connect(stateToProps)(ChatComponent));
+export const Chat = withRouter(connect(stateToProps, { fetchMessages })(ChatComponent));
