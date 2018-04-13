@@ -11,7 +11,7 @@ export class Contacts extends Component {
         <SectionTitle title="Contacts" />
         <div className="contacts">
           {this.props.contacts.map((contact, index) => (
-            <Contact key={index} color={'' + index} link={`/chat/${contact._id}`} {...contact} />
+            <Contact key={index} color={`${index}`} link={`/chat/${contact._id}`} {...contact} />
           ))}
         </div>
       </React.Fragment>
