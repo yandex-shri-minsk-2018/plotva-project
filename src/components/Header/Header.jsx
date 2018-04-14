@@ -33,6 +33,7 @@ export class Header extends Component {
           {type === "chats" && <Link to="/dialog"><Icon type="header-write" /></Link>}
           {type === "search" && <Link to="/contacts"><Header type='action' txt="Cancel"/></Link>}
           {type === "dialog" && <Avatar size="xsmall" />}
+          {type === "profile" && <Icon type="header-write" />}
         </div>
       </div>
     );

@@ -1,59 +1,30 @@
-import React, { PureComponent } from 'react';
-import { Contact } from "../Contact/Contact";
+import React, { Component } from 'react';
+import { Contact } from '../Contact/Contact';
+import { ProfileEdit } from "../ProfileEdit/ProfileEdit";
 
 import { connect } from 'react-redux';
 
-import api from '../../../src/api.js'
+class ProfilePageComponent extends Component {
 
-class ProfilePageComponent extends PureComponent {
   state = {
-    users: [],
-    error: null
+    edit: false,
   };
 
-  async fetch(param) {
-
-    if (param === null) {
-      return;
-    }
-
-    try {
-      let resp = await api.getUsers(param),
-        next = resp.next;
-      this.setState((prevState) => ({
-        users: prevState.users.concat(resp.items.map((user) => {
-          const status = user.online ? 'online' : 'offline';
-          return {
-            userName: user.name ? user.name : 'Anonymous',
-            size: 'small',
-            content: status,
-            contentType: status
-          }
-        }))
-      }));
-      await this.fetch(next);
-    } catch(err) {
-      console.error(err);
-      this.setState({error: err});
-    }
-  }
-
-  componentDidMount() {
-    this.fetch();
-  }
-
   render() {
-    const { users, error } = this.state;
+    const { user } = this.props;
     return (
       <React.Fragment>
         <Contact
-          userName={this.props.user.name}
-          content={this.props.user.phone}
+          userName={user.name}
+          content={user.phone}
           size="large"
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : ''}
+
+        <ProfileEdit />
+
+        {/*{error ? <p>{error.message}</p> : ''}*/}
       </React.Fragment>
     );
   }
