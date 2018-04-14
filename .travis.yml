@@ -8,9 +8,17 @@ install:
 script:
 - yarn lint
 - yarn test
-after_success:
+before_deploy:
 - yarn build
 - echo "Initializing deployment..."
-- yarn deploy:client
-- yarn deploy:server
+- cd build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  local-dir: build
+  on:
+    branch: master
+after_deploy:
 - echo "Deployment complete"
