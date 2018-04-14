@@ -20,9 +20,23 @@ class ChatComponent extends PureComponent {
     this.fetchNext();
   }
 
+  componentWillUnmount() {
+    this.leaveRoom();
+  }
+
   async joinRoom() {
     try {
       await api.currentUserJoinRoom(this.props.match.params.id);
+    } catch (error) {
+      this.setState({
+        error,
+      });
+    }
+  }
+
+  async leaveRoom() {
+    try {
+      await api.leaveRoom();
     } catch (error) {
       this.setState({
         error,
