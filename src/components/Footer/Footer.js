@@ -16,7 +16,9 @@ export class Footer extends Component {
         <Link to="/contacts">
           <FooterBtn icon='footer-contacts' description='Contacts'/>
         </Link>
-        {/*<FooterBtn onClick={this.props.changeTab} source={SettingsIcon} description='Settings'/>*/}
+        <Link to="/profile">
+          <FooterBtn icon='footer-settings' description='Settings'/>
+        </Link>
       </div>
     );
   }

@@ -29,10 +29,10 @@ async function findUserBySid(db, sid) {
         // Create fake user
 
         let user = {
-            name: faker.name.findName(),
-            email: faker.internet.email(),
-            phone: faker.phone.phoneNumber()
-        };
+        name: faker.name.findName(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber()
+      };
 
         user = await saveUser(db, user);
 
@@ -63,6 +63,11 @@ async function getUser(db, userId) {
  * @returns {Promise<User>}
  */
 async function saveUser(db, user) {
+    console.log(user);
+    if (user._id) {
+      user._id = ObjectId(user._id.toString());
+    }
+    console.log(user);
     return insertOrUpdateEntity(db.collection(TABLE), user);
 }
 
