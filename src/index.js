@@ -96,7 +96,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 (async () => {
   const user = await api.getCurrentUser();
-  user && store.dispatch(setUser(user));
+  if (user) {
+    store.dispatch(setUser(user));
+  }
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
