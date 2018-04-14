@@ -9,6 +9,8 @@ import { UserList } from '../UserList/UserList';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
 import { Chat } from '../Chat/Chat';
 import { ChatForm } from '../ChatForm/ChatForm';
+import { ProfilePage } from '../ProfilePage/ProfilePage';
+import { Init } from '../Init/Init';
 
 import './App.css';
 
@@ -27,6 +29,14 @@ const ContactsPage = () => (
 
 const ChatView = () => (
   <Layout header={<Header type="chats" title="Chats" subtitle="" />} content={<ChatsPage />} footer={<Footer />} />
+);
+
+const ProfileView = () => (
+  <Layout
+    header={<Header type="profile" title="Profile" subtitle="" />}
+    content={<ProfilePage />}
+    footer={<Footer />}
+  />
 );
 
 const SearchPage = () => (
@@ -81,6 +91,9 @@ export class App extends Component {
         <Route exact path="/contacts" component={ContactsPage} />
         <Route exact path="/chat/:id" component={DialogPage} />
         <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/init/create/:name" component={Init} />
+        <Route exact path="/init/join/:roomId" component={Init} />
+        <Route exact path="/profile" component={ProfileView} />
       </Switch>
     );
   }
