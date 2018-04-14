@@ -15,7 +15,6 @@ class ProfilePageComponent extends Component {
     return (
       <React.Fragment>
         <Contact
-          avatar={user.img}
           userName={user.name}
           content={user.phone}
           size="large"

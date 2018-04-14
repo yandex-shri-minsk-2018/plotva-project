@@ -16,25 +16,10 @@ export class ProfileEditComponent extends Component {
     ...this.props.user
   };
 
-  readFile(file){
-    return new Promise(function(resolve, reject){
-        var reader = new FileReader();
-        reader.onload = function(evt){
-            resolve(evt.target.result);
-        };
-        reader.onerror = function(err) {
-            reject(err);
-        };
-        reader.readAsDataURL(file);
-    });
-}
-
-  onSubmit = async (e) => {
+  onSubmit = (e) => {
     e.preventDefault();
-    var file = document.querySelector('input[type=file]').files[0];
-    const src = await this.readFile(file);
+
     const user = this.state;
-    user.img = src;
 
     api.saveUser(user)
       .then(() => {

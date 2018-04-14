@@ -30,7 +30,6 @@ class UserListComponent extends PureComponent {
             const status = user.online ? 'online' : 'offline';
             return {
               userName: user.name ? user.name : 'Anonymous',
-              avatar: user.name,
               size: 'small',
               content: status,
               contentType: status,
@@ -52,7 +51,6 @@ class UserListComponent extends PureComponent {
         <Contact
           userName={this.props.user.name}
           content={this.props.user.phone}
-          avatar={this.props.user.img}
           size="large"
           contentType="message"
           color="7"
