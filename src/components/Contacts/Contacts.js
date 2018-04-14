@@ -11,14 +11,11 @@ export class Contacts extends Component {
         <SectionTitle title="Contacts" />
         <div className="contacts">
           {this.props.contacts.map((contact, index) => {
-            if(contact.userName.toLowerCase().indexOf(this.props.search)+1 > 0)
-              return <Contact 
-                        key={index} 
-                        color={`${index}`} 
-                        link={`/chat/${contact._id}`} {...contact} />
-              return null
-            }
-          )}
+            if (contact.userName.toLowerCase().indexOf(this.props.search) + 1 > 0)
+              return <Contact key={index} color={`${index}`} link={`/chat/${contact._id}`} {...contact} />;
+
+            return null;
+          })}
         </div>
       </React.Fragment>
     );
