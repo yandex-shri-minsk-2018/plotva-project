@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+- '9'
+cache: yarn
+install:
+- yarn
+script:
+- yarn lint
+- yarn test
+after_success:
+- yarn build
+- echo "Initializing deployment..."
+- yarn deploy:client
+- yarn deploy:server
+- echo "Deployment complete"
