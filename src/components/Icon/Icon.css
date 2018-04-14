@@ -1,15 +1,16 @@
 .icon {
-  display: inline-block;  
+  display: inline-block;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 }
 
-.icon_message-sent, .icon_message-read {
+.icon_message-sent,
+.icon_message-read {
   color: #19c700;
   width: 14px;
   height: 14px;
-} 
+}
 
 .icon_message-sent {
   background-image: url(./img/sent.svg);

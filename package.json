@@ -38,7 +38,7 @@
     "client": "react-scripts start",
     "server": "nodemon -w server.js -w src/server server.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src/ --ext .jsx --ext js && stylelint ./src/**/*.css"
   },
   "devDependencies": {
     "@storybook/react": "^3.4.0",
@@ -46,6 +46,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-react": "^7.7.0",
+    "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   }
 }

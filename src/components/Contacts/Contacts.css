@@ -1,9 +1,9 @@
-.contact + .contact:before {
+.contact + .contact::before {
   content: '';
-  background-color:#C9C8CD;
+  background-color: #c9c8cd;
   height: 1px;
   position: absolute;
-  top: 0px;
+  top: 0;
   width: calc(100% - 60px);
 }
 
@@ -18,15 +18,15 @@
   color: inherit;
 }
 
-.contact + .contact_large:before {
+.contact + .contact_large::before {
   margin-left: 70px;
 }
 
-.contact + .contact_medium:before {
+.contact + .contact_medium::before {
   margin-left: 70px;
 }
 
-.contact + .contact_small:before {
-  width: calc(100% - 42px);  
+.contact + .contact_small::before {
+  width: calc(100% - 42px);
   margin-left: 52px;
 }

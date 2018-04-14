@@ -9,8 +9,8 @@ import './Header.css';
 
 export class Header extends Component {
   render() {
-    let {title, subtitle, type = "chats"} = this.props,
-        size = subtitle ? "lg" : "sm";
+    let {title, subtitle, type = "chats"} = this.props;
+    let size = subtitle ? "lg" : "sm";
     return (
 
       <div className={`header header_${size}`}>
