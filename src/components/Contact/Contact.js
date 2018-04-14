@@ -8,6 +8,7 @@ import {Icon} from '../Icon/Icon'
 
 export const Contact = (props) => {
     const {
+      avatar,
       userPic,
       userName,
       time,
@@ -27,7 +28,7 @@ export const Contact = (props) => {
 
     return (
       <div className={`contact contact_${size}`}>
-        <Avatar img={userPic} size={size} checked={checked} defaultName={defaultName} color={color}/>
+        <Avatar img={userPic} size={size} checked={checked} defaultName={defaultName} color={color} avatar={avatar}/>
         <div className='contact__content'>
           <div className='content__header'>
             <div className='content__name'>
