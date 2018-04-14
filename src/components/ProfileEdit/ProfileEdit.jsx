@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { InputGroup } from "../InputGroup/InputGroup";
-import { Button } from "../Button/Button";
+import { InputGroup } from '../InputGroup/InputGroup';
+import { Button } from '../Button/Button';
 
 import { connect } from 'react-redux';
 import { setUser } from '../../store/actions/userActions';
