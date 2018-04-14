@@ -25,6 +25,9 @@ export class Footer extends Component {
             active={this.props.path === contacts}
           />
         </Link>
+        <Link to="/profile">
+          <FooterBtn icon='footer-settings' description='Settings'/>
+        </Link>
       </div>
     );
   }
