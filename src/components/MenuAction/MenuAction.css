@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 7px 10px 7px 10px;
-  color: #0981E1;
+  color: #0981e1;
   border: none;
   background-color: transparent;
 }
@@ -13,14 +13,16 @@
 .menu-action::after {
   margin-left: 60px;
   content: '';
-  background-color: #C9C8CD;
+  background-color: #c9c8cd;
   height: 1px;
   position: absolute;
   bottom: 0;
   width: calc(100% - 60px);
 }
 
-.menu-action:hover, .menu-action:focus, .menu-action:active {
+.menu-action:hover,
+.menu-action:focus,
+.menu-action:active {
   outline: none;
 }
 

@@ -9,8 +9,8 @@ import './Header.css';
 
 export class Header extends Component {
   render() {
-    let {title, subtitle, type = "chats"} = this.props,
-        size = subtitle ? "lg" : "sm";
+    let {title, subtitle, type = "chats"} = this.props;
+    let size = subtitle ? "lg" : "sm";
     return (
 
       <div className={`header header_${size}`}>
@@ -33,6 +33,7 @@ export class Header extends Component {
           {type === "chats" && <Link to="/dialog"><Icon type="header-write" /></Link>}
           {type === "search" && <Link to="/contacts"><Header type='action' txt="Cancel"/></Link>}
           {type === "dialog" && <Avatar size="xsmall" />}
+          {type === "profile" && <Icon type="header-write" />}
         </div>
       </div>
     );

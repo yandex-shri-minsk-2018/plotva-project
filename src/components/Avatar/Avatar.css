@@ -1,13 +1,12 @@
 .avatar {
   display: inline-block;
-  overflow: hidden;   
-  border-radius: 100%;  
+  overflow: hidden;
+  border-radius: 100%;
   position: relative;
 }
 
-
 .avatar_large {
-  flex: 0 0 62px;  
+  flex: 0 0 62px;
   width: 62px;
   height: 62px;
   line-height: 62px;
@@ -15,7 +14,7 @@
 }
 
 .avatar_medium {
-  flex: 0 0 60px;  
+  flex: 0 0 60px;
   width: 60px;
   height: 60px;
   line-height: 60px;
@@ -23,12 +22,11 @@
 }
 
 .avatar_small {
-  flex: 0 0 40px;  
+  flex: 0 0 40px;
   width: 40px;
   height: 40px;
   line-height: 40px;
   font-size: 15px;
-  
 }
 
 .avatar_xsmall {
@@ -64,5 +62,4 @@
   height: 100%;
   background-color: black;
   opacity: 0.6;
-
 }

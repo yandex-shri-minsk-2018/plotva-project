@@ -4,7 +4,6 @@ export const userReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_SET:
       return {
-        ...state,
         ...action.user,
       };
     default:

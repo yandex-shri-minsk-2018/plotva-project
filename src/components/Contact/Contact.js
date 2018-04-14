@@ -6,7 +6,7 @@ import {Avatar} from '../Avatar/Avatar'
 import {Icon} from '../Icon/Icon'
 
 
-export function Contact(props) {
+export const Contact = (props) => {
     const {
       userPic,
       userName,
@@ -21,11 +21,13 @@ export function Contact(props) {
       checked = false } = props;
 
       let defaultName = '';
-      userName && userName.split(' ').forEach(word => defaultName += word[0]);
+      if (userName) {
+        userName.split(' ').forEach(word => { defaultName += word[0] });
+      }
 
     return (
       <div className={`contact contact_${size}`}>
-        <Avatar img={userPic} size={size} checked={checked} defaultName={ defaultName } color={color}/>
+        <Avatar img={userPic} size={size} checked={checked} defaultName={defaultName} color={color}/>
         <div className='contact__content'>
           <div className='content__header'>
             <div className='content__name'>
