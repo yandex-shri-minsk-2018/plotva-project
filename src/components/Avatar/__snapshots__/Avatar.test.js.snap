@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar render 1`] = `
+<div
+  className="avatar avatar_large "
+>
+  <div
+    className="avatar_default"
+    style={
+      Object {
+        "backgroundColor": "#e17076",
+      }
+    }
+  >
+    AB
+  </div>
+</div>
+`;
