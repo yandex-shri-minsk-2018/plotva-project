@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import api from '../../../src/api.js'
 
+export const UserListComponent = connect(stateToProps) ( 
 class UserListComponent extends PureComponent {
   state = {
     users: [],
@@ -54,14 +55,15 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users}/>}
+        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} search={this.props.current}/>}
       </React.Fragment>
     );
   }
-}
+})
 
 const stateToProps = (state) => ({
-  user: state.user
+  user: state.user,
+  current: state.search.currentUserSearch
 });
 
 export const UserList = connect(stateToProps)(UserListComponent);
