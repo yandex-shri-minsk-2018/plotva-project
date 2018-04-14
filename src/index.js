@@ -5,12 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './store/store';
 import { setUser } from './store/actions/userActions';
-import { appendMessages } from './store/actions/messagesActions';
 import { App } from './components/App/App';
 import api from './api';
 
 import './index.css';
 
+import { registerSocketEventListeners } from './registerSocketEventListeners';
 import registerServiceWorker from './registerServiceWorker';
 
 // Example of usage API
@@ -99,6 +99,8 @@ import registerServiceWorker from './registerServiceWorker';
   const user = await api.getCurrentUser();
   user && store.dispatch(setUser(user));
 
+  registerSocketEventListeners(store);
+
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -108,19 +110,4 @@ import registerServiceWorker from './registerServiceWorker';
     document.getElementById('root'),
   );
   registerServiceWorker();
-
-  // Event Listeners
-  // @TODO: Refactor it to a separate file
-
-  await api.onMessage(result => {
-    const message = [
-      {
-        id: result._id,
-        text: result.message,
-        time: result.created_at,
-        isMy: user._id === result.userId,
-      },
-    ];
-    store.dispatch(appendMessages({ roomId: result.roomId, messages: message }));
-  });
 })();

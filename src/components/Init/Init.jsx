@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import api from '../../api';
 
 export class Init extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   async componentDidMount() {
     try {
       const createRegExp = /create/;
