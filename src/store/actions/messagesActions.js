@@ -15,7 +15,14 @@ export const fetchMessages = roomId => async (dispatch, getState) => {
   const room = getState().messages[roomId];
   const currentUserId = getState().user._id;
   const hasMessages = room && room.messages.length > 0;
-  const next = room && room.next ? room.next : null;
+  let next = room && room.next ? room.next : null;
+
+  if (next) {
+    next = {
+      ...next,
+      order: { created_at: -1 },
+    };
+  }
 
   let response;
   try {
