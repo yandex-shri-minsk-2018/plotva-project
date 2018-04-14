@@ -15,14 +15,14 @@ export class Footer extends Component {
           <FooterBtn 
             icon='footer-chats' 
             description={chats}
-            active={this.props.path === chats? true : false}
+            active={this.props.path === chats}
           />
         </Link>
         <Link to="/contacts">
           <FooterBtn 
             icon='footer-contacts' 
             description={contacts}
-            active={this.props.path === contacts? true : false}
+            active={this.props.path === contacts}
           />
         </Link>
       </div>
