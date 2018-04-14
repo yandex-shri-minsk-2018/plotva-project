@@ -26,6 +26,9 @@ async function pageableCollection(collection, {lastId, order, limit = 10, ...que
 
     let queryBuilder = collection.find(query, {limit});
 
+    console.log(queryBuilder.cmd);
+    console.log(query);
+
     if (order) {
         queryBuilder = queryBuilder.sort(order);
     }

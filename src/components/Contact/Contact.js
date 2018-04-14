@@ -14,6 +14,7 @@ export function Contact(props) {
       content,
       count,
       icon,
+      onClick,
       link,
       color,
       size = 'large',
@@ -24,7 +25,7 @@ export function Contact(props) {
       userName && userName.split(' ').forEach(word => defaultName += word[0]);
 
     return (
-      <div className={`contact contact_${size}`}>
+      <div onClick={onClick} className={`contact contact_${size}`}>
         <Avatar img={userPic} size={size} checked={checked} defaultName={ defaultName } color={color}/>
         <div className='contact__content'>
           <div className='content__header'>
@@ -62,8 +63,8 @@ export function Contact(props) {
           </div>
         </div>
         { link
-          ? <Link to={link} />   
-          : false     
+          ? <Link to={link} />
+          : false
         }
       </div>
     );

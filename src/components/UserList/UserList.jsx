@@ -25,6 +25,7 @@ class UserListComponent extends PureComponent {
         users: prevState.users.concat(resp.items.map((user) => {
           const status = user.online ? 'online' : 'offline';
           return {
+            _id: user._id,
             userName: user.name ? user.name : 'Anonymous',
             size: 'small',
             content: status,
@@ -54,7 +55,7 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users}/>}
+        {error ? <p>{error.message}</p> : <Contacts type="contactList" user={this.props.user} contacts={users}/>}
       </React.Fragment>
     );
   }

@@ -52,7 +52,7 @@ async function getRooms(db, filter) {
 async function getUserRooms(db, userId, filter) {
     return pageableCollection(db.collection(TABLE), {
         ...filter,
-        users: [ObjectId(userId.toString())],
+        users: ObjectId(userId.toString()),
     });
 }
 
