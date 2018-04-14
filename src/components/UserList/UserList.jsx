@@ -1,47 +1,48 @@
 import React, { PureComponent } from 'react';
 import { Contacts } from '../Contacts/Contacts';
-import { Contact } from "../Contact/Contact";
+import { Contact } from '../Contact/Contact';
 
 import { connect } from 'react-redux';
 
-import api from '../../../src/api.js'
+import api from '../../../src/api.js';
 
 class UserListComponent extends PureComponent {
+  componentDidMount() {
+    this.fetch();
+  }
+
   state = {
     users: [],
-    error: null
+    error: null,
   };
 
   async fetch(param) {
-
     if (param === null) {
       return;
     }
 
     try {
-      let resp = await api.getUsers(param),
-        next = resp.next;
-      this.setState((prevState) => ({
-        users: prevState.users.concat(resp.items.map((user) => {
-          const status = user.online ? 'online' : 'offline';
-          return {
-            _id: user._id,
-            userName: user.name ? user.name : 'Anonymous',
-            size: 'small',
-            content: status,
-            contentType: status
-          }
-        }))
+      let resp = await api.getUsers(param);
+      let next = resp.next;
+      this.setState(prevState => ({
+        users: prevState.users.concat(
+          resp.items.map(user => {
+            const status = user.online ? 'online' : 'offline';
+            return {
+              _id: user._id,
+              userName: user.name ? user.name : 'Anonymous',
+              size: 'small',
+              content: status,
+              contentType: status,
+            };
+          }),
+        ),
       }));
       await this.fetch(next);
-    } catch(err) {
+    } catch (err) {
       console.error(err);
-      this.setState({error: err});
+      this.setState({ error: err });
     }
-  }
-
-  componentDidMount() {
-    this.fetch();
   }
 
   render() {
@@ -55,14 +56,14 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" user={this.props.user} contacts={users}/>}
+        {error ? <p>{error.message}</p> : <Contacts type="contactList" user={this.props.user} contacts={users} />}
       </React.Fragment>
     );
   }
 }
 
-const stateToProps = (state) => ({
-  user: state.user
+const stateToProps = state => ({
+  user: state.user,
 });
 
 export const UserList = connect(stateToProps)(UserListComponent);

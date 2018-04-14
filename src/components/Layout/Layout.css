@@ -6,7 +6,8 @@
   flex-direction: column;
 }
 
-.layout__header, .layout__footer {
+.layout__header,
+.layout__footer {
   display: flex;
   align-items: stretch;
 }
@@ -34,4 +35,3 @@
   text-decoration: none;
   color: inherit;
 }
-
