@@ -15,7 +15,7 @@ export const fetchMessages = roomId => async (dispatch, getState) => {
   const room = getState().messages[roomId];
   const currentUserId = getState().user._id;
   const hasMessages = room && room.messages.length > 0;
-  let next = room && room.next ? room.next : null;
+  let next = (room && room.next) || null;
 
   if (next) {
     next = {
