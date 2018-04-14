@@ -1,15 +1,15 @@
 {
-  "main.css": "static/css/main.49bcc467.css",
-  "main.css.map": "static/css/main.49bcc467.css.map",
-  "main.js": "static/js/main.f78c837f.js",
-  "main.js.map": "static/js/main.f78c837f.js.map",
-  "static\\media\\back.svg": "static/media/back.f052cfac.svg",
-  "static\\media\\chats.svg": "static/media/chats.d832d61a.svg",
-  "static\\media\\contacts.svg": "static/media/contacts.33e8bf58.svg",
-  "static\\media\\plus.svg": "static/media/plus.1b7bf4e8.svg",
-  "static\\media\\read.svg": "static/media/read.e5fef501.svg",
-  "static\\media\\search.svg": "static/media/search.49adbb9b.svg",
-  "static\\media\\sent.svg": "static/media/sent.df9b6a7d.svg",
-  "static\\media\\settings.svg": "static/media/settings.ce746661.svg",
-  "static\\media\\write.svg": "static/media/write.d6dd3532.svg"
+  "main.css": "static/css/main.96522f9c.css",
+  "main.css.map": "static/css/main.96522f9c.css.map",
+  "main.js": "static/js/main.b279008f.js",
+  "main.js.map": "static/js/main.b279008f.js.map",
+  "static/media/back.svg": "static/media/back.f052cfac.svg",
+  "static/media/chats.svg": "static/media/chats.d832d61a.svg",
+  "static/media/contacts.svg": "static/media/contacts.33e8bf58.svg",
+  "static/media/plus.svg": "static/media/plus.1b7bf4e8.svg",
+  "static/media/read.svg": "static/media/read.e5fef501.svg",
+  "static/media/search.svg": "static/media/search.49adbb9b.svg",
+  "static/media/sent.svg": "static/media/sent.df9b6a7d.svg",
+  "static/media/settings.svg": "static/media/settings.ce746661.svg",
+  "static/media/write.svg": "static/media/write.d6dd3532.svg"
 }
