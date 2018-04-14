@@ -10,9 +10,12 @@ export class Contacts extends Component {
       <React.Fragment>
         <SectionTitle title="Contacts" />
         <div className="contacts">
-          {this.props.contacts.map((contact, index) => (
-            <Contact key={index} color={`${index}`} link={`/chat/${contact._id}`} {...contact} />
-          ))}
+          {this.props.contacts.map((contact, index) => {
+            if (contact.userName.toLowerCase().indexOf(this.props.search) + 1 > 0)
+              return <Contact key={index} color={`${index}`} link={`/chat/${contact._id}`} {...contact} />;
+
+            return null;
+          })}
         </div>
       </React.Fragment>
     );
