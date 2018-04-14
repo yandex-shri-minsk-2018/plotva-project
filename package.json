@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
+  "homepage": "https://yandex-shri-minsk-2018.github.io/plotva-project/",
   "dependencies": {
     "babel-core": "^6.26.0",
     "classnames": "^2.2.5",
@@ -12,6 +13,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "faker": "^4.1.0",
+    "gh-pages": "^1.1.0",
     "mongod": "^2.0.0",
     "mongodb": "^3.0.5",
     "nodemon": "^1.15.1",
@@ -38,6 +40,7 @@
     "client": "react-scripts start",
     "server": "nodemon -w server.js -w src/server server.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy:client": "yarn build && node scripts/deployClient.js",
     "lint": "eslint ./src/ --ext jsx --ext js && stylelint ./src/**/*.css"
   },
   "devDependencies": {
