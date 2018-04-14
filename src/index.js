@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './store/store';
 import { setUser } from './store/actions/userActions';
+import { appendMessages } from './store/actions/messagesActions';
 import { App } from './components/App/App';
 import api from './api';
 
@@ -34,10 +35,10 @@ import registerServiceWorker from './registerServiceWorker';
 //     console.log('User leaved room: ', result);
 //   });
 
-//   // On user is joined to room
-//   await api.onMessage((result) => {
-//     console.log('New message: ', result);
-//   });
+// On user is joined to room
+// await api.onMessage((result) => {
+//   console.log('New message: ', result);
+// });
 
 //   //
 //   // Actions
@@ -97,6 +98,7 @@ import registerServiceWorker from './registerServiceWorker';
 (async () => {
   const user = await api.getCurrentUser();
   user && store.dispatch(setUser(user));
+
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -106,4 +108,19 @@ import registerServiceWorker from './registerServiceWorker';
     document.getElementById('root'),
   );
   registerServiceWorker();
+
+  // Event Listeners
+  // @TODO: Refactor it to a separate file
+
+  await api.onMessage(result => {
+    const message = [
+      {
+        id: result._id,
+        text: result.message,
+        time: result.created_at,
+        isMy: user._id === result.userId,
+      },
+    ];
+    store.dispatch(appendMessages({ roomId: result.roomId, messages: message }));
+  });
 })();
