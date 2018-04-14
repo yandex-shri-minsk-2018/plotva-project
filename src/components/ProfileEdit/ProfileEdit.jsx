@@ -16,44 +16,35 @@ export class ProfileEditComponent extends Component {
     ...this.props.user
   };
 
-  onSubmit = () => {
-    const data = {
-      name: this.state.name ? this.state.name : this.props.user.name,
-      email: this.state.email ? this.state.email : this.props.user.email,
-      phone: this.state.phone ? this.state.phone : this.props.user.phone,
-      _id: this.props.user._id
-    };
+  onSubmit = (e) => {
+    e.preventDefault();
 
-    api.saveUser(data)
+    const user = this.state;
+
+    api.saveUser(user)
       .then(() => {
-        this.props.dispatch(setUser(data));
+        this.props.dispatch(setUser(user));
       })
       .catch((e) => {
         console.log(e);
       })
   };
 
-  onInputChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
+  onInputChange = (e) => {
     this.setState({
-      [name]: value
+      [e.target.name]: e.target.value
     });
   };
 
   render() {
     const { user } = this.props;
     return (
-        <form className="profile-edit" onSubmit={(e) => {
-          e.preventDefault();
-          this.onSubmit()
-        }}>
+        <form className="profile-edit" onSubmit={this.onSubmit}>
 
           <InputGroup type="text" name="name" onInputChange={this.onInputChange} value={user.name} label="Введите имя:" />
           <InputGroup type="email" name="email" onInputChange={this.onInputChange} value={user.email} label="Введите e-mail:" />
           <InputGroup type="tel" name="phone" onInputChange={this.onInputChange} value={user.phone} label="Введите номер телефона:" />
+          <InputGroup type="file" name="avatar" label="Прикрепить фото:" />
 
           <Button txt="Сохранить" />
 
