@@ -1,6 +1,5 @@
 import React from 'react';
 import './Avatar.css';
-import defaultImage from './default.png'
 import {colors} from './DefaultColors.js'
 
 export function Avatar(props) {
