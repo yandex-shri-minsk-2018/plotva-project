@@ -25,7 +25,7 @@ class ContactsComponent extends Component {
         this.props.history.push(`/chat/${rooms.items[0]._id}`);
       }
     } catch (err) {
-      console.log(err);
+      this.setState({ error: 'Произошла ошибка.' });
     }
   };
 
@@ -33,10 +33,9 @@ class ContactsComponent extends Component {
     try {
       const room = await api.createRoom({ name });
       this.props.history.push(`/chat/${room._id}`);
-      console.log(await this.joinUserToRoom(userId, room._id));
-      
+      await this.joinUserToRoom(userId, room._id);
     } catch (err) {
-      console.log(err);
+      this.setState({ error: 'Произошла при создании комнаты.' });
     }
   };
 
@@ -44,7 +43,7 @@ class ContactsComponent extends Component {
     try {
       await api.userJoinRoom(userId, roomId);
     } catch (err) {
-      console.log(err);
+      this.setState({ error: 'Произошла ошибка при создании комнаты.' });
     }
   };
 
