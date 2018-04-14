@@ -12,8 +12,6 @@ import { ChatForm } from '../ChatForm/ChatForm';
 import { ProfilePage } from '../ProfilePage/ProfilePage';
 import { Init } from '../Init/Init';
 
-import './App.css';
-
 const ContactsPage = () => (
   <Layout
     header={<Header type="contacts" title="Contacts" subtitle="" />}
