@@ -10,6 +10,7 @@ import api from './api';
 
 import './index.css';
 
+import { registerSocketEventListeners } from './registerSocketEventListeners';
 import registerServiceWorker from './registerServiceWorker';
 
 // Example of usage API
@@ -33,12 +34,12 @@ import registerServiceWorker from './registerServiceWorker';
 //   await api.onUserLeavedRoom((result) => {
 //     console.log('User leaved room: ', result);
 //   });
-//
-//   // On user is joined to room
-//   await api.onMessage((result) => {
-//     console.log('New message: ', result);
-//   });
-//
+
+// On user is joined to room
+// await api.onMessage((result) => {
+//   console.log('New message: ', result);
+// });
+
 //   //
 //   // Actions
 //   //
@@ -96,9 +97,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 (async () => {
   const user = await api.getCurrentUser();
+
   if (user) {
     store.dispatch(setUser(user));
   }
+
+  registerSocketEventListeners(store);
+
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
