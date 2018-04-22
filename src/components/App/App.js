@@ -21,12 +21,12 @@ const ContactsPage = () => (
         <UserList />
       </React.Fragment>
     }
-    footer={<Footer />}
+    footer={<Footer path='Contacts'/>}
   />
 );
 
 const ChatView = () => (
-  <Layout header={<Header type="chats" title="Chats" subtitle="" />} content={<ChatsPage />} footer={<Footer />} />
+  <Layout header={<Header type="chats" title="Chats" subtitle="" />} content={<ChatsPage />} footer={<Footer path='Chats'/>} />
 );
 
 const ProfileView = () => (

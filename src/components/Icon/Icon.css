@@ -37,12 +37,14 @@
   width: 30px;
   height: 26px;
   background-image: url(./img/chats.svg);
+  margin-bottom: -7px;
 }
 
 .icon_footer-contacts {
   width: 26px;
   height: 26px;
   background-image: url(./img/contacts.svg);
+  margin-bottom: -7px;
 }
 
 .icon_footer-settings {
