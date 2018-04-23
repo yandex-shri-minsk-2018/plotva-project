@@ -30,3 +30,7 @@
   width: calc(100% - 42px);
   margin-left: 52px;
 }
+
+.contact_hidden {
+  display: none;
+}

@@ -56,7 +56,7 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" user={this.props.user} contacts={users} />}
+        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} search={this.props.current} />}
       </React.Fragment>
     );
   }
@@ -64,6 +64,7 @@ class UserListComponent extends PureComponent {
 
 const stateToProps = state => ({
   user: state.user,
+  current: state.search.currentUserSearch,
 });
 
 export const UserList = connect(stateToProps)(UserListComponent);
