@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './SearchInput.css';
+import { setSearch } from '../../store/actions/searchActions';
 
 const stateToProps = state => ({
   current: state.search.user,
@@ -16,10 +17,7 @@ export const SearchInput = connect(stateToProps)(
 
     getSearchRequest(event) {
       const value = event.target.value;
-      return this.props.dispatch({
-        type: 'SET_SEARCH',
-        letters: value,
-      });
+      return this.props.dispatch(setSearch(value));
     }
 
     render() {
