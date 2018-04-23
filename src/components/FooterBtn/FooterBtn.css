@@ -12,8 +12,10 @@
 .footer-btn_passive {
   filter: grayscale(100%);
   text-align: center;
+  opacity: 0.55;
 }
 
 .footer-btn {
   text-align: center;
+  transform: scale(0.9);
 }
