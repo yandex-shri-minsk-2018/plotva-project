@@ -31,6 +31,7 @@ class UserListComponent extends PureComponent {
             return {
               _id: user._id,
               userName: user.name ? user.name : 'Anonymous',
+              avatar: user.img,
               size: 'small',
               content: status,
               contentType: status,
@@ -52,6 +53,7 @@ class UserListComponent extends PureComponent {
         <Contact
           userName={this.props.user.name}
           content={this.props.user.phone}
+          avatar={this.props.user.img}
           size="large"
           contentType="message"
           color="7"
