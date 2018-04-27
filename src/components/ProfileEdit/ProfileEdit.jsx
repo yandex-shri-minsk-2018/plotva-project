@@ -18,7 +18,7 @@ export class ProfileEditComponent extends Component {
 
   readFile(file){
     return new Promise(function(resolve, reject){
-        var reader = new FileReader();
+        const reader = new FileReader();
         reader.onload = function(evt){
             resolve(evt.target.result);
         };
@@ -31,10 +31,11 @@ export class ProfileEditComponent extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    var file = document.querySelector('input[type=file]').files[0];
-    const src = await this.readFile(file);
+    const file = document.querySelector('input[type=file]').files[0];
     const user = this.state;
-    user.img = src;
+    if (file) {
+      user.img = await this.readFile(file);
+    }
 
     api.saveUser(user)
       .then(() => {
@@ -43,6 +44,8 @@ export class ProfileEditComponent extends Component {
       .catch((e) => {
         console.log(e);
       })
+
+    this.props.toggleEdit();
   };
 
   onInputChange = (e) => {
