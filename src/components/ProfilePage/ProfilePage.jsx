@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Contact } from '../Contact/Contact';
 import { ProfileEdit } from '../ProfileEdit/ProfileEdit';
 import { Icon } from '../Icon/Icon'
 
