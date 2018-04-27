@@ -1,6 +1,7 @@
 .profile-info {
   position: relative;
   max-height: 100vw;
+  min-height: 90px;
   margin: 20px 0 40px;
   overflow: hidden;
 }
@@ -21,7 +22,11 @@
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
+  padding: 10px 90px 10px 10px;
+}
+
+.profile-info_txt:first-child {
+  position: static;
 }
 
 .profile-info_txt p {
