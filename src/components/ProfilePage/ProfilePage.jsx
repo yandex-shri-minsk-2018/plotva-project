@@ -22,7 +22,7 @@ class ProfilePageComponent extends Component {
     return (
       <React.Fragment>
         <div className="profile-info">
-          <img src={user.img} alt={user.name} className="profile-info_img" />
+          { user.img && <img src={user.img} alt={user.name} className="profile-info_img" /> }
           <div className="profile-info_txt">
             <p className="profile-info_name">{user.name}</p>
             <p className="profile-info_email">{user.email}</p>
