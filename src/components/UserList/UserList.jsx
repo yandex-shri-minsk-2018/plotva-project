@@ -22,6 +22,14 @@ class UserListComponent extends PureComponent {
     this.fetchNext();
   }
 
+  componentDidUnMount() {
+    const users = [].concat(this.props.users);
+    users.forEach(user => {user.checked = false});
+
+    this.props.dispatch(setUsers([]));        
+    this.props.dispatch(setSelectedUsers([]));    
+  }
+
   async fetchNext() {
     const next = this.props.next;
     if (next === null) {

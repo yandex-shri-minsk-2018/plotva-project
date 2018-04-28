@@ -3,21 +3,17 @@ import { connect } from 'react-redux';
 import './ChatInput.css';
 import { setChatName } from '../../store/actions/chatActions';
 
-const stateToProps = state => ({
-  current: state.search.user,
-});
+const stateToProps = state => ({});
 
 export const ChatInput = connect(stateToProps)(
   class ChatInput extends React.Component {
     constructor(props) {
       super(props);
-
-      this.getSearchRequest = this.getNewChatName.bind(this);
+      this.getNewChatName = this.getNewChatName.bind(this);
     }
 
     getNewChatName(event) {
-      const value = event.target.value;
-      return this.props.dispatch(setChatName(value));
+      this.props.dispatch(setChatName(event.target.value));
     }
 
     render() {

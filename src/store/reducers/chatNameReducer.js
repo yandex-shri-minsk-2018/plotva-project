@@ -1,16 +1,16 @@
 import { SET_CHAT_NAME } from '../actions/actionTypes';
 
-export function searchReducer(state, action) {
+export function chatNameReducer(state, action) {
   if (!state) {
     return {
-      currentUserSearch: '',
+      currentChatName: '',
     };
   }
 
   if (action.type === SET_CHAT_NAME) {
     return {
       ...state,
-      currentChatName: action.query,
+      currentChatName: action.payload,
     };
   }
 

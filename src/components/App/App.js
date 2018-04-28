@@ -87,7 +87,7 @@ const DialogPage = () => (
 
 const CreateChatPage = () => (
   <Layout
-    header={<Header type="contacts" title="Contacts" subtitle="" />}
+    header={<Header type="contacts" title="Contacts" subtitle="" createChat />}
     content={
       <React.Fragment>
         <ChatInput />
