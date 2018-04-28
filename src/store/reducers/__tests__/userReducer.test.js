@@ -1,11 +1,11 @@
 import { userReducer } from '../userReducer';
-import { USER_SET } from '../../actions/actionTypes';
+import { SET_USER } from '../../actions/actionTypes';
 
 describe('Redux: User Reducer', () => {
   it('should return initial state with given an empty action', () => {
-    expect(userReducer(undefined, {})).toEqual({});
+    expect(userReducer(undefined, {})).toEqual({"selectedUsers": [], "users": []});
   });
-  it('should handle USER_SET action', () => {
+  it('should handle SET_USER action', () => {
     const user = {
       _id: '123',
       name: 'Test Test',
@@ -13,9 +13,9 @@ describe('Redux: User Reducer', () => {
       phone: '533-802-3815',
     };
     const userAction = {
-      type: USER_SET,
+      type: SET_USER,
       user,
     };
-    expect(userReducer({}, userAction)).toEqual(user);
+    expect(userReducer({}, userAction)).toEqual({user:  user});
   });
 });

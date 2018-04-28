@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import { rootReducer } from '../rootReducer';
 import { userReducer } from '../userReducer';
 import { messagesReducer } from '../messagesReducer';
-import { USER_SET, MESSAGES_SET } from '../../actions/actionTypes';
+import { SET_USER, MESSAGES_SET } from '../../actions/actionTypes';
 
 describe('Redux: Root Reducer', () => {
   it('should return initial state that matchs what child reducers return given an empty action', () => {
@@ -13,7 +13,7 @@ describe('Redux: Root Reducer', () => {
 
   it('should verify, that child reducers handle its actions', () => {
     const store = createStore(rootReducer);
-    const userAction = { type: USER_SET, user: { id: '1', name: 'Test Name', email: 'redux@test.com', phone: '123' } };
+    const userAction = { type: SET_USER, user: { id: '1', name: 'Test Name', email: 'redux@test.com', phone: '123' } };
     const messageAction = {
       type: MESSAGES_SET,
       payload: {
