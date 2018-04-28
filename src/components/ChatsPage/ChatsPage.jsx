@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Contacts } from '../Contacts/Contacts';
 import { InfiniteScroller } from '../InfiniteScroller/InfiniteScroller';
+import { NoResults } from '../NoResults/NoResults';
+import { Error } from '../Error/Error';
+import { FETCH_ROOMS_ERROR } from '../../errorCodes';
 import api from '../../api';
 
 export class ChatsPage extends PureComponent {
@@ -57,10 +60,14 @@ export class ChatsPage extends PureComponent {
 
   render() {
     const { rooms, error } = this.state;
+    if (!rooms.length && !error) {
+      return <NoResults text="No chats here yet..." />;
+    }
+
     return (
-      <InfiniteScroller loadMore={this.fetchNext}>
+      <InfiniteScroller hasMore={!!this.next} loadMore={this.fetchNext}>
         <Contacts contacts={rooms} search="" />
-        {error ? <div>Error has been occured</div> : null}
+        {error ? <Error code={FETCH_ROOMS_ERROR} /> : null}
       </InfiniteScroller>
     );
   }

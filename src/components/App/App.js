@@ -12,6 +12,7 @@ import { Chat } from '../Chat/Chat';
 import { ChatForm } from '../ChatForm/ChatForm';
 import { ProfilePage } from '../ProfilePage/ProfilePage';
 import { Init } from '../Init/Init';
+import { Login } from '../Login/Login';
 
 const ContactsPage = () => (
   <Layout
@@ -95,7 +96,7 @@ export class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={ChatView} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/chats" component={ChatView} />
         <Route exact path="/contacts" component={ContactsPage} />
         <Route exact path="/chat/:id" component={DialogPageContainer} />

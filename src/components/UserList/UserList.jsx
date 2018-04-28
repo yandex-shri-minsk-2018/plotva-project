@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Contacts } from '../Contacts/Contacts';
 import { Contact } from '../Contact/Contact';
-
+import { NoResults } from '../NoResults/NoResults';
+import { Error } from '../Error/Error';
+import { FETCH_CONTACTS_ERROR } from '../../errorCodes';
 import { connect } from 'react-redux';
 
 import api from '../../../src/api.js';
@@ -48,6 +50,10 @@ class UserListComponent extends PureComponent {
 
   render() {
     const { users, error } = this.state;
+    if (!users.length && !error) {
+      return <NoResults text="No contacts yet..." />;
+    }
+
     return (
       <React.Fragment>
         <Contact
@@ -58,7 +64,8 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} user={this.props.user} search={this.props.current} />}
+        <Contacts type="contactList" contacts={users} user={this.props.user} search={this.props.current} />
+        {error ? <Error code={FETCH_CONTACTS_ERROR} /> : null}
       </React.Fragment>
     );
   }

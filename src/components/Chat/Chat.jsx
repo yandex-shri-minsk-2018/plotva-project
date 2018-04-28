@@ -5,6 +5,9 @@ import { InfiniteScroller } from '../InfiniteScroller/InfiniteScroller';
 import { MessagesList } from '../MessagesList/MessagesList';
 import { fetchMessages } from '../../store/actions/messagesActions';
 import { fetchChat, clearChat } from '../../store/actions/chatActions';
+import { Error } from '../Error/Error';
+import { NoResults } from '../NoResults/NoResults';
+import { FETCH_MESSAGES_ERROR } from '../../errorCodes';
 import api from '../../api';
 
 class ChatComponent extends PureComponent {
@@ -23,23 +26,12 @@ class ChatComponent extends PureComponent {
   }
 
   componentWillUnmount() {
-    this.leaveRoom();
     this.props.clearChat();
   }
 
   async joinRoom() {
     try {
       await api.currentUserJoinRoom(this.props.match.params.id);
-    } catch (error) {
-      this.setState({
-        error,
-      });
-    }
-  }
-
-  async leaveRoom() {
-    try {
-      await api.leaveRoom();
     } catch (error) {
       this.setState({
         error,
@@ -58,10 +50,17 @@ class ChatComponent extends PureComponent {
   }
 
   render() {
+    const { error } = this.state;
     const { messages, match } = this.props;
+
+    if (!messages[match.params.id] && !error) {
+      return <NoResults text="No messages here yet..." />;
+    }
+
     return (
       <InfiniteScroller loadMore={this.fetchNext}>
         {messages[match.params.id] ? <MessagesList messages={messages[match.params.id].messages} /> : null}
+        {error ? <Error code={FETCH_MESSAGES_ERROR} /> : null}
       </InfiniteScroller>
     );
   }

@@ -38,14 +38,14 @@ export class ProfileEditComponent extends Component {
     }
 
     api.saveUser(user)
-      .then(() => {
-        this.props.dispatch(setUser(user));
+      .then((updatedUser) => {
+        this.props.dispatch(setUser(updatedUser));
+        this.props.toggleEdit();
       })
       .catch((e) => {
         console.log(e);
       })
 
-    this.props.toggleEdit();
   };
 
   onInputChange = (e) => {
