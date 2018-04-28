@@ -1,31 +1,35 @@
 import React, { PureComponent } from 'react';
 import { Contacts } from '../Contacts/Contacts';
+import { InfiniteScroller } from '../InfiniteScroller/InfiniteScroller';
 import { Contact } from '../Contact/Contact';
+import { setUsers, setNext, setSelectedUsers } from '../../store/actions/userActions';
 
 import { connect } from 'react-redux';
 
 import api from '../../../src/api.js';
 
 class UserListComponent extends PureComponent {
-  componentDidMount() {
-    this.fetch();
+  constructor() {
+    super();
+    this.state = {
+      error: null,
+    };
+    this.fetchNext = this.fetchNext.bind(this);
+    this.addToChat = this.addToChat.bind(this);
   }
 
-  state = {
-    users: [],
-    error: null,
-  };
+  componentDidMount() {
+    this.fetchNext();
+  }
 
-  async fetch(param) {
-    if (param === null) {
+  async fetchNext() {
+    const next = this.props.next;
+    if (next === null) {
       return;
     }
-
     try {
-      let resp = await api.getUsers(param);
-      let next = resp.next;
-      this.setState(prevState => ({
-        users: prevState.users.concat(
+      let resp = await api.getUsers(next);
+      const users = this.props.users.concat(
           resp.items.map(user => {
             const status = user.online ? 'online' : 'offline';
             return {
@@ -36,19 +40,38 @@ class UserListComponent extends PureComponent {
               content: status,
               contentType: status,
             };
-          }),
-        ),
-      }));
-      await this.fetch(next);
+          }))
+          this.props.dispatch(setUsers(users));
+          this.props.dispatch(setNext(resp.next));
     } catch (err) {
       console.error(err);
       this.setState({ error: err });
     }
   }
 
+  addToChat(index) {
+    const users = [].concat(this.props.users);
+    const selectedUsers = [].concat(this.props.selectedUsers);
+    const current = users[index];
+
+    if (!current.checked){
+      selectedUsers.push(current);
+      this.props.dispatch(setSelectedUsers(selectedUsers))
+    } else {
+      let user = selectedUsers.find(user => user._id === current._id);
+      let deleteIndex = selectedUsers.indexOf(user);
+      selectedUsers.splice(deleteIndex, 1);
+      this.props.dispatch(setSelectedUsers(selectedUsers));
+    }
+
+    current.checked = !current.checked;
+    this.props.dispatch(setUsers(users));
+    
+  }
+
   render() {
-    const { users, error } = this.state;
-    const { user, createChat, current } = this.props;
+    const { error } = this.state;
+    const { users, user, createChat, current } = this.props;
     return (
       <React.Fragment>
         {
@@ -65,14 +88,20 @@ class UserListComponent extends PureComponent {
             />
           )
         }
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} user={this.props.user} search={current} />}
+        <InfiniteScroller loadMore={this.fetchNext}>
+          <Contacts type="contactList" contacts={users} user={user} search={current} addToChat={this.addToChat} createChat={createChat} />
+          {error ? <div>Error has been occured</div> : null}
+        </InfiniteScroller>
       </React.Fragment>
     );
   }
 }
 
 const stateToProps = state => ({
-  user: state.user,
+  user: state.user.user,
+  users: state.user.users,
+  next: state.user.next,
+  selectedUsers: state.user.selectedUsers,
   current: state.search.currentUserSearch,
 });
 
