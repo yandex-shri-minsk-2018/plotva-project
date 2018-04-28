@@ -61,9 +61,10 @@ class ChatComponent extends PureComponent {
     const { error } = this.state;
     const { messages, match } = this.props;
 
-    if (!messages.length && !error) {
+    if (!messages[match.params.id] && !error) {
       return <NoResults text="No messages here yet..." />;
     }
+
     return (
       <InfiniteScroller loadMore={this.fetchNext}>
         {messages[match.params.id] ? <MessagesList messages={messages[match.params.id].messages} /> : null}
