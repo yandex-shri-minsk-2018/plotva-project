@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import debounce from 'debounce';
 
+import './styles.css';
+
 export class InfiniteScroller extends Component {
   constructor(props) {
     super(props);
@@ -55,9 +57,13 @@ export class InfiniteScroller extends Component {
     return this.state.isLoading ? (
       'Loading...'
     ) : (
-      <div ref={this.setRef}>
+      <div className="infinite-scroller" ref={this.setRef}>
         {this.props.children}
-        <button onClick={this.loadMore}>Load more</button>
+        {this.props.hasMore ? (
+          <button className="infinite-scroller__button" onClick={this.loadMore}>
+            Load more
+          </button>
+        ) : null}
       </div>
     );
   }
