@@ -22,17 +22,18 @@ const TABLE = 'users';
  *
  * @returns {Promise<User>}
  */
-async function findUserBySid(db, sid) {
+async function findUserBySid(db, sid, user) {
     let session = await getSessionInfo(db, sid);
 
     if (!session.userId) {
         // Create fake user
 
         let user = {
-        name: faker.name.findName(),
-        email: faker.internet.email(),
-        phone: faker.phone.phoneNumber()
-      };
+            name: '',
+            email: '',
+            phone: '',
+            isFirstLogin: true,
+        };
 
         user = await saveUser(db, user);
 
@@ -63,11 +64,10 @@ async function getUser(db, userId) {
  * @returns {Promise<User>}
  */
 async function saveUser(db, user) {
-    console.log(user);
     if (user._id) {
-      user._id = ObjectId(user._id.toString());
+        user.isFirstLogin = false;
+        user._id = ObjectId(user._id.toString());
     }
-    console.log(user);
     return insertOrUpdateEntity(db.collection(TABLE), user);
 }
 
