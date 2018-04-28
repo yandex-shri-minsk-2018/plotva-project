@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Header } from '../Header/Header';
@@ -77,13 +78,19 @@ const SearchPage = () => (
   />
 );
 
-const DialogPage = () => (
+const DialogPage = ({ chat }) => (
   <Layout
-    header={<Header type="dialog" title="Dialog Name" subtitle="last seen yesterday" />}
+    header={<Header type="dialog" title={chat.title || 'Loading...'} subtitle={chat.subtitle || 'Loading...'} />}
     content={<Chat />}
     footer={<ChatForm />}
   />
 );
+
+const stateToProps = state => ({
+  chat: state.chat,
+});
+
+const DialogPageContainer = connect(stateToProps)(DialogPage);
 
 export class App extends Component {
   render() {
@@ -92,7 +99,7 @@ export class App extends Component {
         <Route exact path="/" component={Login} />
         <Route exact path="/chats" component={ChatView} />
         <Route exact path="/contacts" component={ContactsPage} />
-        <Route exact path="/chat/:id" component={DialogPage} />
+        <Route exact path="/chat/:id" component={DialogPageContainer} />
         <Route exact path="/search" component={SearchPage} />
         <Route exact path="/init/create/:name" component={Init} />
         <Route exact path="/init/join/:roomId" component={Init} />
