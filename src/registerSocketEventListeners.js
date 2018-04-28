@@ -11,6 +11,12 @@ export const registerSocketEventListeners = async store => {
         isMy: store.getState().user._id === result.userId,
       },
     ];
+
+    new Notification('New message', {
+      body: result.message,
+      icon: '/favicon.ico',
+    });
+
     store.dispatch(
       appendMessages({
         roomId: result.roomId,

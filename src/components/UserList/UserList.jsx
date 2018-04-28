@@ -3,7 +3,9 @@ import { Contacts } from '../Contacts/Contacts';
 import { InfiniteScroller } from '../InfiniteScroller/InfiniteScroller';
 import { Contact } from '../Contact/Contact';
 import { setUsers, setNext, setSelectedUsers } from '../../store/actions/userActions';
-
+import { NoResults } from '../NoResults/NoResults';
+import { Error } from '../Error/Error';
+import { FETCH_CONTACTS_ERROR } from '../../errorCodes';
 import { connect } from 'react-redux';
 
 import api from '../../../src/api.js';
@@ -78,6 +80,7 @@ class UserListComponent extends PureComponent {
   }
 
   render() {
+<<<<<<< HEAD
     const { error } = this.state;
     const { users, user, createChat, current } = this.props;
     return (
@@ -100,6 +103,25 @@ class UserListComponent extends PureComponent {
           <Contacts type="contactList" contacts={users} user={user} search={current} addToChat={this.addToChat} createChat={createChat} />
           {error ? <div>Error has been occured</div> : null}
         </InfiniteScroller>
+=======
+    const { users, error } = this.state;
+    if (!users.length && !error) {
+      return <NoResults text="No contacts yet..." />;
+    }
+
+    return (
+      <React.Fragment>
+        <Contact
+          userName={this.props.user.name}
+          content={this.props.user.phone}
+          avatar={this.props.user.img}
+          size="large"
+          contentType="message"
+          color="7"
+        />
+        <Contacts type="contactList" contacts={users} user={this.props.user} search={this.props.current} />
+        {error ? <Error code={FETCH_CONTACTS_ERROR} /> : null}
+>>>>>>> master
       </React.Fragment>
     );
   }

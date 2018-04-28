@@ -66,16 +66,14 @@ async function insertOrUpdateEntity(collection, data) {
     if (data._id) {
         let result = await collection.findOneAndUpdate(
             {_id: data._id},
-            data
+            data,
+            {returnNewDocument: true}
         );
-
-        console.log(result);
     } else {
         let result = await collection.insertOne(data);
         data._id = result.insertedId;
-
-        return data;
     }
+    return collection.findOne({_id: data._id});
 }
 
 module.exports = {
