@@ -43,7 +43,7 @@ export class ChatsPage extends PureComponent {
       res.items.map(async room => {
         const messages = await api.getRoomMessages(room._id);
         let chatUser = await api.getUser(room.users[1]);
-        let chatName = room.users.length > 2 ? 'Групповой чат' : chatUser.name;
+        let chatName = room.users.length > 2 ? 'Group chat' : chatUser.name;
         return {
           _id: room._id,
           userName: chatName,
