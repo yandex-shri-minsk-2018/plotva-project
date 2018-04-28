@@ -20,15 +20,17 @@ class UserListComponent extends PureComponent {
     this.addToChat = this.addToChat.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchNext();
+  async componentDidMount() {
+    //two pages to fill the screen
+    await this.fetchNext();
+    await this.fetchNext();
   }
 
-  componentDidUnMount() {
+  componentWillUnmount() {
     const users = [].concat(this.props.users);
     users.forEach(user => {user.checked = false});
 
-    this.props.dispatch(setUsers([]));        
+    this.props.dispatch(setUsers(users));        
     this.props.dispatch(setSelectedUsers([]));    
   }
 

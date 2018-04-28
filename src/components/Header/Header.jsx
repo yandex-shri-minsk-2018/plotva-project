@@ -7,7 +7,7 @@ import {HeaderBtn} from "../HeaderBtn/HeaderBtn";
 import {Avatar} from "../Avatar/Avatar";
 import './Header.css';
 import api from '../../api';
-import { setSelectedUsers } from '../../store/actions/userActions';
+import { setSelectedUsers, setUsers } from '../../store/actions/userActions';
 
 
 import { connect } from 'react-redux';
@@ -21,9 +21,11 @@ class HeaderComponent extends Component {
       if (!rooms.count) {
         selectedUsers.push(user)
         await this.createRoomWithUsers(this.props.chatName, selectedUsers);
+
+        const users = [].concat(this.props.users);
+        users.forEach(user => {user.checked = false});
+        this.props.dispatch(setUsers(users));  
         this.props.dispatch(setSelectedUsers([]));
-        const room = await api.getRooms({ name: this.props.chatName });
-        this.props.history.push(`/chat/${room.items[0]._id}`);
       }
     } catch (err) {
       this.setState({ error: 'Произошла ошибка.' });
@@ -87,7 +89,8 @@ class HeaderComponent extends Component {
 const stateToProps = state => ({
   selectedUsers: state.user.selectedUsers,
   chatName: state.chatName.currentChatName,
-  user: state.user.user
+  user: state.user.user,
+  users: state.user.users
 });
 
 export const Header = connect(stateToProps)(HeaderComponent);
