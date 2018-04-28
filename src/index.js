@@ -11,7 +11,8 @@ import api from './api';
 import './index.css';
 
 import { registerSocketEventListeners } from './registerSocketEventListeners';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
+import regSw from './reg-sw';
 
 // Example of usage API
 
@@ -112,5 +113,5 @@ import registerServiceWorker from './registerServiceWorker';
     </BrowserRouter>,
     document.getElementById('root'),
   );
-  registerServiceWorker();
+  regSw();
 })();
