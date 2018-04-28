@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import { Link } from 'react-router-dom'
-import {Icon} from "../Icon/Icon";
-import {SearchInput} from "../SearchInput/SearchInput";
-import {HeaderTitle} from "../HeaderTitle/HeaderTitle";
-import {HeaderBtn} from "../HeaderBtn/HeaderBtn";
-import {Avatar} from "../Avatar/Avatar";
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom'
+import { Icon} from "../Icon/Icon";
+import { SearchInput } from "../SearchInput/SearchInput";
+import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
+import { HeaderBtn } from "../HeaderBtn/HeaderBtn";
+import { Avatar } from "../Avatar/Avatar";
 import './Header.css';
 import api from '../../api';
 import { setSelectedUsers, setUsers } from '../../store/actions/userActions';
@@ -48,7 +48,7 @@ class HeaderComponent extends Component {
       this.setState({ error: 'Произошла ошибка при создании комнаты.' });
     }
   };
-
+  
   render() {
     let {title, subtitle, type = "chats"} = this.props;
     let size = subtitle ? "lg" : "sm";
@@ -58,7 +58,7 @@ class HeaderComponent extends Component {
       <div className={`header header_${size}`}>
         <div className="header__left">
           {type === "search" && <SearchInput />}
-          {type === "dialog" && <Link to="/chats"><HeaderBtn type="back" txt="Back" /></Link>}
+          {type === "dialog" && <HeaderBtn onClick={this.props.history.goBack} type="back" txt="Back" />}
         </div>
 
         {title && (
@@ -93,4 +93,4 @@ const stateToProps = state => ({
   users: state.user.users
 });
 
-export const Header = connect(stateToProps)(HeaderComponent);
+export const Header = connect(stateToProps)(withRouter(HeaderComponent));
