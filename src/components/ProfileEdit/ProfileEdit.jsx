@@ -8,28 +8,27 @@ import { setUser } from '../../store/actions/userActions';
 
 import './ProfileEdit.css';
 
-import api from '../../api'
+import api from '../../api';
 
 export class ProfileEditComponent extends Component {
-
   state = {
-    ...this.props.user
+    ...this.props.user,
   };
 
-  readFile(file){
-    return new Promise(function(resolve, reject){
-        const reader = new FileReader();
-        reader.onload = function(evt){
-            resolve(evt.target.result);
-        };
-        reader.onerror = function(err) {
-            reject(err);
-        };
-        reader.readAsDataURL(file);
+  readFile(file) {
+    return new Promise(function(resolve, reject) {
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        resolve(evt.target.result);
+      };
+      reader.onerror = function(err) {
+        reject(err);
+      };
+      reader.readAsDataURL(file);
     });
-}
+  }
 
-  onSubmit = async (e) => {
+  onSubmit = async e => {
     e.preventDefault();
     const file = document.querySelector('input[type=file]').files[0];
     const user = this.state;
@@ -37,42 +36,58 @@ export class ProfileEditComponent extends Component {
       user.img = await this.readFile(file);
     }
 
-    api.saveUser(user)
-      .then((updatedUser) => {
+    api
+      .saveUser(user)
+      .then(updatedUser => {
         this.props.dispatch(setUser(updatedUser));
         this.props.toggleEdit();
       })
-      .catch((e) => {
+      .catch(e => {
         console.log(e);
-      })
-
+      });
   };
 
-  onInputChange = (e) => {
+  onInputChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   render() {
     const { user } = this.props;
     return (
-        <form className="profile-edit" onSubmit={this.onSubmit}>
+      <form className="profile-edit" onSubmit={this.onSubmit}>
+        <InputGroup
+          type="text"
+          name="name"
+          onInputChange={this.onInputChange}
+          value={user.name}
+          label="Enter your name"
+        />
+        <InputGroup
+          type="email"
+          name="email"
+          onInputChange={this.onInputChange}
+          value={user.email}
+          label="Enter your e-mail"
+        />
+        <InputGroup
+          type="tel"
+          name="phone"
+          onInputChange={this.onInputChange}
+          value={user.phone}
+          label="Enter your phone number"
+        />
+        <InputGroup type="file" name="avatar" label="Attach avatar" />
 
-          <InputGroup type="text" name="name" onInputChange={this.onInputChange} value={user.name} label="Введите имя:" />
-          <InputGroup type="email" name="email" onInputChange={this.onInputChange} value={user.email} label="Введите e-mail:" />
-          <InputGroup type="tel" name="phone" onInputChange={this.onInputChange} value={user.phone} label="Введите номер телефона:" />
-          <InputGroup type="file" name="avatar" label="Прикрепить фото:" />
-
-          <Button txt="Сохранить" />
-
-        </form>
+        <Button txt="Update" />
+      </form>
     );
   }
 }
 
-const stateToProps = (state) => ({
-  user: state.user
+const stateToProps = state => ({
+  user: state.user,
 });
 
 export const ProfileEdit = connect(stateToProps)(ProfileEditComponent);
