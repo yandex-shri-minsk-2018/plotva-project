@@ -64,7 +64,7 @@ class UserListComponent extends PureComponent {
           contentType="message"
           color="7"
         />
-        <Contacts type="contactList" contacts={users} search={this.props.current} />
+        <Contacts type="contactList" contacts={users} user={this.props.user} search={this.props.current} />
         {error ? <Error code={FETCH_CONTACTS_ERROR} /> : null}
       </React.Fragment>
     );

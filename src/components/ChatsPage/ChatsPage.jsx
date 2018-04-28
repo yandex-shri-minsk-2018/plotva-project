@@ -66,7 +66,7 @@ export class ChatsPage extends PureComponent {
 
     return (
       <InfiniteScroller hasMore={!!this.next} loadMore={this.fetchNext}>
-        <Contacts contacts={rooms} />
+        <Contacts contacts={rooms} search="" />
         {error ? <Error code={FETCH_ROOMS_ERROR} /> : null}
       </InfiniteScroller>
     );

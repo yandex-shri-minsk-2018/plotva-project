@@ -15,9 +15,17 @@ export const SearchInput = connect(stateToProps)(
       this.getSearchRequest = this.getSearchRequest.bind(this);
     }
 
+    componentWillUnmount() {
+      this.resetState();
+    }
+
     getSearchRequest(event) {
       const value = event.target.value;
       return this.props.dispatch(setSearch(value));
+    }
+
+    resetState() {
+      return this.props.dispatch(setSearch(''));
     }
 
     render() {
