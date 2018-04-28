@@ -80,9 +80,11 @@ class UserListComponent extends PureComponent {
   }
 
   render() {
-<<<<<<< HEAD
     const { error } = this.state;
     const { users, user, createChat, current } = this.props;
+    if (!users.length && !error) {
+      return <NoResults text="No contacts yet..." />;
+    }
     return (
       <React.Fragment>
         {
@@ -101,27 +103,8 @@ class UserListComponent extends PureComponent {
         }
         <InfiniteScroller loadMore={this.fetchNext}>
           <Contacts type="contactList" contacts={users} user={user} search={current} addToChat={this.addToChat} createChat={createChat} />
-          {error ? <div>Error has been occured</div> : null}
+          {error ? <Error code={FETCH_CONTACTS_ERROR} /> : null}
         </InfiniteScroller>
-=======
-    const { users, error } = this.state;
-    if (!users.length && !error) {
-      return <NoResults text="No contacts yet..." />;
-    }
-
-    return (
-      <React.Fragment>
-        <Contact
-          userName={this.props.user.name}
-          content={this.props.user.phone}
-          avatar={this.props.user.img}
-          size="large"
-          contentType="message"
-          color="7"
-        />
-        <Contacts type="contactList" contacts={users} user={this.props.user} search={this.props.current} />
-        {error ? <Error code={FETCH_CONTACTS_ERROR} /> : null}
->>>>>>> master
       </React.Fragment>
     );
   }
