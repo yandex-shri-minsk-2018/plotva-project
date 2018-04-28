@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import { Link } from 'react-router-dom'
-import {Icon} from "../Icon/Icon";
-import {SearchInput} from "../SearchInput/SearchInput";
-import {HeaderTitle} from "../HeaderTitle/HeaderTitle";
-import {HeaderBtn} from "../HeaderBtn/HeaderBtn";
-import {Avatar} from "../Avatar/Avatar";
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom'
+import { Icon} from "../Icon/Icon";
+import { SearchInput } from "../SearchInput/SearchInput";
+import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
+import { HeaderBtn } from "../HeaderBtn/HeaderBtn";
+import { Avatar } from "../Avatar/Avatar";
 import './Header.css';
 
-export class Header extends Component {
+class HeaderComponent extends Component {
   render() {
     let {title, subtitle, type = "chats"} = this.props;
     let size = subtitle ? "lg" : "sm";
@@ -16,7 +16,7 @@ export class Header extends Component {
       <div className={`header header_${size}`}>
         <div className="header__left">
           {type === "search" && <SearchInput />}
-          {type === "dialog" && <Link to="/chats"><HeaderBtn type="back" txt="Back" /></Link>}
+          {type === "dialog" && <HeaderBtn onClick={this.props.history.goBack} type="back" txt="Back" />}
         </div>
 
         {title && (
@@ -38,3 +38,5 @@ export class Header extends Component {
     );
   }
 }
+
+export const Header = withRouter(HeaderComponent);
