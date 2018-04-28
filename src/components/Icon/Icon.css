@@ -59,3 +59,9 @@
   height: 21px;
   background-image: url(./img/back.svg);
 }
+
+.icon_file {
+  width: 18px;
+  height: 18px;
+  background-image: url(./img/attachment.svg);
+}
