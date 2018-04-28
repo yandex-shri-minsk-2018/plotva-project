@@ -30,7 +30,7 @@ export class Header extends Component {
 
         <div className="header__right">
           {type === "contacts" && <Link to="/search"><Icon type="header-add" /></Link>}
-          {type === "chats" && <Link to="/dialog"><Icon type="header-write" /></Link>}
+          {type === "chats" && <Link to="/create_chat"><Icon type="header-write" /></Link>}
           {type === "search" && <Link to="/contacts"><Header type='action' txt="Cancel"/></Link>}
           {type === "dialog" && <Avatar size="xsmall" />}
         </div>

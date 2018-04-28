@@ -48,17 +48,26 @@ class UserListComponent extends PureComponent {
 
   render() {
     const { users, error } = this.state;
+    const { user, createChat, current } = this.props;
     return (
       <React.Fragment>
-        <Contact
-          userName={this.props.user.name}
-          content={this.props.user.phone}
-          avatar={this.props.user.img}
-          size="large"
-          contentType="message"
-          color="7"
-        />
-        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} search={this.props.current} />}
+        {
+          createChat
+          ? false
+          : (
+            <Contact
+              userName={user.name}
+              content={user.phone}
+              avatar={user.img}
+              size="large"
+              contentType="message"
+              color="7"
+            />
+          )
+          
+        }
+        
+        {error ? <p>{error.message}</p> : <Contacts type="contactList" contacts={users} search={current} />}
       </React.Fragment>
     );
   }

@@ -4,6 +4,7 @@ import { Layout } from '../Layout/Layout';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { SearchInput } from '../SearchInput/SearchInput';
+import { ChatInput } from '../ChatInput/ChatInput';
 import { Contacts } from '../Contacts/Contacts';
 import { UserList } from '../UserList/UserList';
 import { ChatsPage } from '../ChatsPage/ChatsPage';
@@ -84,6 +85,19 @@ const DialogPage = () => (
   />
 );
 
+const CreateChatPage = () => (
+  <Layout
+    header={<Header type="contacts" title="Contacts" subtitle="" />}
+    content={
+      <React.Fragment>
+        <ChatInput />
+        <UserList createChat />
+      </React.Fragment>
+    }
+    footer={<Footer path="Chats" />}
+  />
+);
+
 export class App extends Component {
   render() {
     return (
@@ -96,6 +110,7 @@ export class App extends Component {
         <Route exact path="/init/create/:name" component={Init} />
         <Route exact path="/init/join/:roomId" component={Init} />
         <Route exact path="/profile" component={ProfileView} />
+        <Route exact path="/create_chat" component={CreateChatPage} />
       </Switch>
     );
   }
