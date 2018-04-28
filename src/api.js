@@ -40,8 +40,8 @@ class Api {
     async _requestResponse(type, payload) {
         await this._connectPromise;
 
-        let id = this.uniqueId++,
-            envelop = {payload, id};
+        let id = this.uniqueId++;
+        let envelop = {payload, id};
 
         return new Promise((resolve) => {
             this.io.once(type + id, resolve);

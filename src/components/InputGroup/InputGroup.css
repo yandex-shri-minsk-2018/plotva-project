@@ -1,0 +1,13 @@
+.input-wrapper {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.input-wrapper__input {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 6px;
+  font: inherit;
+  margin-top: 3px;
+}

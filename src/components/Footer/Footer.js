@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import FooterBtn from '../FooterBtn/FooterBtn.js';
 import './Footer.css';
 
+const chats = 'Chats';
+const contacts = 'Contacts';
+const settings = 'Settings';
 
 export class Footer extends Component {
-
-
   render() {
     return (
       <div className="footer">
         <Link to="/chats">
-          <FooterBtn icon='footer-chats' description='Chats'/>
+          <FooterBtn icon="footer-chats" description={chats} active={this.props.path === chats} />
         </Link>
         <Link to="/contacts">
-          <FooterBtn icon='footer-contacts' description='Contacts'/>
+          <FooterBtn icon="footer-contacts" description={contacts} active={this.props.path === contacts} />
         </Link>
-        {/*<FooterBtn onClick={this.props.changeTab} source={SettingsIcon} description='Settings'/>*/}
+        <Link to="/profile">
+          <FooterBtn icon="footer-settings" description={settings} active={this.props.path === settings} />
+        </Link>
       </div>
     );
   }

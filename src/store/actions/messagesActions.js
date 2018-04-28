@@ -14,8 +14,16 @@ export const appendMessages = payload => ({
 export const fetchMessages = roomId => async (dispatch, getState) => {
   const room = getState().messages[roomId];
   const currentUserId = getState().user._id;
-  const hasMessages = room && room.messages > 0;
-  const next = room && room[roomId].next;
+  const hasMessages = room && room.messages.length > 0;
+  let next = (room && room.next) || null;
+
+  if (next) {
+    next = {
+      ...next,
+      order: { created_at: -1 },
+    };
+  }
+
   let response;
   try {
     if (!hasMessages) {
@@ -28,9 +36,8 @@ export const fetchMessages = roomId => async (dispatch, getState) => {
       }));
 
       dispatch(setMessages({ roomId, messages, next: response.next }));
-      return response;
     } else if (hasMessages && next) {
-      response = await api.getRoomMessages(roomId, next);
+      response = await api.getMessages(next);
       const messages = response.items.map(message => ({
         id: message._id,
         text: message.message,
@@ -42,6 +49,8 @@ export const fetchMessages = roomId => async (dispatch, getState) => {
     } else {
       return;
     }
+
+    return response;
   } catch (error) {
     console.log(error);
   }

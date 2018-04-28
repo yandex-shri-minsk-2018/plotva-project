@@ -1,15 +1,16 @@
 .icon {
-  display: inline-block;  
+  display: inline-block;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 }
 
-.icon_message-sent, .icon_message-read {
+.icon_message-sent,
+.icon_message-read {
   color: #19c700;
   width: 14px;
   height: 14px;
-} 
+}
 
 .icon_message-sent {
   background-image: url(./img/sent.svg);
@@ -36,22 +37,25 @@
   width: 30px;
   height: 26px;
   background-image: url(./img/chats.svg);
+  margin-bottom: -7px;
 }
 
 .icon_footer-contacts {
   width: 26px;
   height: 26px;
   background-image: url(./img/contacts.svg);
+  margin-bottom: -7px;
 }
 
 .icon_footer-settings {
   width: 26px;
   height: 26px;
   background-image: url(./img/settings.svg);
+  margin-bottom: -7px;
 }
 
 .icon_header-back {
-  width: 21px;
+  width: 12px;
   height: 21px;
   background-image: url(./img/back.svg);
 }
