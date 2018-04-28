@@ -2,8 +2,8 @@ import React from 'react';
 import './Icon.css';
 
 export function Icon (props) {
-  let {type} = props;
+  let {type, onClick} = props;
   return (
-      <span className={`icon icon_${type}`} />
+      <span onClick={onClick} className={`icon icon_${type}`} />
     );
 }

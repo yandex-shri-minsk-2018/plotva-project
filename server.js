@@ -15,8 +15,8 @@ const {
  * Setup mongo configuration
  */
 const DATABASE_CONFIG = {
-    user: MONGO_USER,
-    password: MONGO_PASSWORD,
+    user: 'admin',
+    password: 'admin',
     host: MONGO_HOST,
     port: MONGO_PORT,
     local: MONGO_LOCAL !== 'false',

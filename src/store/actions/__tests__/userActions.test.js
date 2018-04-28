@@ -1,5 +1,5 @@
 import { setUser } from '../userActions';
-import { USER_SET } from '../actionTypes';
+import { SET_USER } from '../actionTypes';
 
 describe('Redux: User Actions', () => {
   it('should create an action to set a user', () => {
@@ -11,7 +11,7 @@ describe('Redux: User Actions', () => {
     };
 
     const expectedAction = {
-      type: USER_SET,
+      type: SET_USER,
       user,
     };
 
