@@ -11,7 +11,7 @@ export const messagesReducer = (state = {}, action) => {
         },
       };
     case MESSAGES_APPENDED:
-      if (state[action.payload.roomId] && state[action.payload.roomId].messages.length > 0) {
+      if (state[action.payload.roomId] && state[action.apayload.roomId].messages.length > 0) {
         return {
           ...state,
           [action.payload.roomId]: {
