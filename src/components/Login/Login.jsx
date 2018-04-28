@@ -15,7 +15,7 @@ class LoginComponent extends Component {
 }
 
 const stateToProps = (state) => ({
-  user: state.user,
+  user: state.user.user,
 });
 
 export const Login = withRouter(connect(stateToProps)(LoginComponent));

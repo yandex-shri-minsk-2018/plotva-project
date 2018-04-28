@@ -28,7 +28,7 @@ class ProfilePageComponent extends Component {
     return (
       <React.Fragment>
         {this.props.user.isFirstLogin ? (
-          <h3>Введите ваши данные ниже:</h3>
+          <h3>Enter some info:</h3>
         ) : (
           <div className="profile-info">
             {user.img && <img src={user.img} alt={user.name} className="profile-info_img" />}
@@ -50,7 +50,7 @@ class ProfilePageComponent extends Component {
 }
 
 const stateToProps = state => ({
-  user: state.user,
+  user: state.user.user,
 });
 
 export const ProfilePage = connect(stateToProps)(ProfilePageComponent);
